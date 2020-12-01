@@ -6,6 +6,10 @@ import 'package:handcash_connect_sdk/environments/environments.dart';
 import 'package:handcash_connect_sdk/profile/profile.dart';
 import 'package:handcash_connect_sdk/wallet/wallet.dart';
 
+export './wallet/wallet.dart';
+export './profile/profile.dart';
+export './environments/environments.dart';
+
 class HandCashCloudAccount {
   final Wallet wallet;
   final Profile profile;
