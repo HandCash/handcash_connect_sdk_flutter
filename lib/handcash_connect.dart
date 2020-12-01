@@ -10,6 +10,7 @@ export './wallet/wallet.dart';
 export './profile/profile.dart';
 export './environments/environments.dart';
 export './models/models.dart';
+export './link/link_handler.dart' hide LinkRepository;
 
 class HandCashCloudAccount {
   final Wallet wallet;
