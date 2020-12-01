@@ -13,9 +13,10 @@ Configure Android an iOS apps to handle links [tutorial](https://pub.dev/package
 Start listening links
 
 ```Dart
-   final listener = LinkHanlder().listen();
+   final listener = LinkHandler().listen();
 
-   listener.
+   // Listen for every account created opening a link
+   listener.forEach((HandCashCloudAccount account) { });
 ```
 
 
