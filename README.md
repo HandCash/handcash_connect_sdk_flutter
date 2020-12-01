@@ -1,5 +1,24 @@
 ## Install
 
+Go to pub.dev
+
+Add in your pubspec.yaml
+
+
+
+## Configure your app to handle links
+
+Configure Android an iOS apps to handle links [tutorial](https://pub.dev/packages/uni_links#permission)
+
+Start listening links
+
+```Dart
+   final listener = LinkHanlder().listen();
+
+   listener.
+```
+
+
 ## Initialize the SDK
 
 To start, you will need to create an instance of `HandCashCloudAccount`. This object allows you to interact with the SDK.
@@ -14,17 +33,29 @@ The following code shows how to make a simple payment:
 
 ```Dart
 
-final cloudAccount = HandCashCloudAccount.fromAuthToken('98a8ca...7702aac1');
+final cloudAccount = HandCashCloudAccount.fromAuthToken(authToken: '98a8ca...7702aac1');
 
-const paymentParameters = {
-  description: 'Hold my beer!🍺',
-  appAction: 'drink'
-  payments: [
-    { to: 'eyeone', currency: 'USD', amount: 0.25 },
-    { to: 'apagut', currency: 'EUR', amount: 0.05 },
-    { to: 'satoshi', currency: 'SAT', amount: 50000 }
-  ]
-};
+final paymentParameters = PaymentParameters(
+      description: 'Hold my beer!🍺',
+      appAction: 'drink',
+      receivers: [
+        PaymentRequestItem(
+          destination: 'eyeone',
+          currencyCode: 'USD',
+          sendAmount: 0.005,
+        ),
+        PaymentRequestItem(
+          destination: 'apagut',
+          currencyCode: 'EUR',
+          sendAmount: 0.05,
+        ),
+        PaymentRequestItem(
+          destination: 'satoshi',
+          currencyCode: 'SAT',
+          sendAmount: 50000,
+        ),
+      ],
+    );
 
 final paymentResult = await cloudAccount.wallet.pay(paymentParameters);
 print(paymentResult);
