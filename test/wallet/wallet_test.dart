@@ -1,14 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:handcash_connect_sdk/environments/environments.dart';
 import 'package:handcash_connect_sdk/handcash_connect.dart';
-import 'package:handcash_connect_sdk/models/attachment.dart';
-import 'package:handcash_connect_sdk/models/payment_parameters.dart';
-import 'package:handcash_connect_sdk/models/payment_request_item.dart';
-import 'package:handcash_connect_sdk/models/payment_result.dart';
-import 'package:handcash_connect_sdk/models/spendable_balance.dart';
-import 'package:handcash_connect_sdk/models/transaction_participant.dart';
 
 void main() {
   final token = Platform.environment['test_authToken'];

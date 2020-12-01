@@ -1,12 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:handcash_connect_sdk/environments/environments.dart';
 import 'package:handcash_connect_sdk/handcash_connect.dart';
-import 'package:handcash_connect_sdk/models/cloud_api_exception.dart';
-import 'package:handcash_connect_sdk/models/permissions.dart';
-import 'package:handcash_connect_sdk/models/public_profile.dart';
-import 'package:handcash_connect_sdk/models/user_profile.dart';
 
 void main() {
   final token = Platform.environment['test_authToken'];
