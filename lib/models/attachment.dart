@@ -1,3 +1,4 @@
+import 'package:handcash_connect_sdk/models/attachment_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'attachment.g.dart';
@@ -5,9 +6,7 @@ part 'attachment.g.dart';
 @JsonSerializable()
 class Attachment {
   final String value;
-
-  /// One of "base64", "hex" or "json"
-  final String format;
+  final AttachmentType format;
 
   Attachment({
     this.value,
