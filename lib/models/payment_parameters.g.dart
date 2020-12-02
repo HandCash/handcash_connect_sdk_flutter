@@ -21,10 +21,18 @@ PaymentParameters _$PaymentParametersFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$PaymentParametersToJson(PaymentParameters instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-      'appAction': instance.appAction,
-      'receivers': instance.receivers,
-      'attachment': instance.attachment,
-    };
+Map<String, dynamic> _$PaymentParametersToJson(PaymentParameters instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('description', instance.description);
+  writeNotNull('appAction', instance.appAction);
+  writeNotNull('receivers', instance.receivers);
+  writeNotNull('attachment', instance.attachment);
+  return val;
+}

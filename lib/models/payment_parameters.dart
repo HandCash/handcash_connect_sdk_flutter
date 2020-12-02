@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'payment_parameters.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class PaymentParameters {
   final String description;
   final String appAction;
