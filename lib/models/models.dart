@@ -10,3 +10,5 @@ export './public_profile.dart';
 export './spendable_balance.dart';
 export './transaction_participant.dart';
 export './user_profile.dart';
+export './attachment_type.dart';
+export './payment_type.dart';

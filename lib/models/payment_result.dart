@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:handcash_connect_sdk/models/payment_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'package:handcash_connect_sdk/models/attachment.dart';
@@ -12,9 +13,7 @@ class PaymentResult {
   final String note;
   final String appAction;
   final int time;
-
-  /// - "send" or "receive"
-  final String type;
+  final PaymentType type;
   final double satoshiFees;
   final double satoshiAmount;
   final double fiatExchangeRate;

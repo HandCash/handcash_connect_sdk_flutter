@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:handcash_connect_sdk/handcash_connect.dart';
+import 'package:handcash_connect_sdk/models/payment_type.dart';
 
 void main() {
   final token = Platform.environment['test_authToken'];
@@ -25,7 +26,7 @@ void main() {
         ),
       ],
       attachment: Attachment(
-        format: 'hex',
+        format: AttachmentType.HEX,
         value: '0011223344556677889900AABBCCDDEEFF',
       ),
     );
@@ -35,7 +36,7 @@ void main() {
     expect(createPaymentResult, isA<PaymentResult>());
     expect(createPaymentResult.fiatCurrencyCode, 'USD');
     expect(createPaymentResult.appAction, 'test');
-    expect(createPaymentResult.attachments[0].format, 'hex');
+    expect(createPaymentResult.attachments[0].format, AttachmentType.HEX);
     expect(createPaymentResult.attachments[0].value, '0011223344556677889900AABBCCDDEEFF'.toLowerCase());
   });
 
@@ -43,7 +44,7 @@ void main() {
     const transactionId = 'c6c782d3af0cf794e963bea40047ce5c65f89ceb22963f279ee215e30bb76db3';
     final correctPaymentResult = PaymentResult(
       attachments: [
-        Attachment(format: "hex", value: "0011223344556677889900aabbccddeeff"),
+        Attachment(format: AttachmentType.HEX, value: "0011223344556677889900aabbccddeeff"),
       ],
       fiatCurrencyCode: 'USD',
       fiatExchangeRate: 161.117245105,
@@ -61,7 +62,7 @@ void main() {
       satoshiFees: 247.0,
       time: 1599238998,
       transactionId: 'c6c782d3af0cf794e963bea40047ce5c65f89ceb22963f279ee215e30bb76db3',
-      type: 'send',
+      type: PaymentType.SEND,
       appAction: "",
     );
 
