@@ -25,7 +25,7 @@ void main() {
         ),
       ],
       attachment: Attachment(
-        format: 'hex',
+        format: AttachmentType.HEX,
         value: '0011223344556677889900AABBCCDDEEFF',
       ),
     );
@@ -43,7 +43,7 @@ void main() {
     const transactionId = 'c6c782d3af0cf794e963bea40047ce5c65f89ceb22963f279ee215e30bb76db3';
     final correctPaymentResult = PaymentResult(
       attachments: [
-        Attachment(format: "hex", value: "0011223344556677889900aabbccddeeff"),
+        Attachment(format: AttachmentType.HEX, value: "0011223344556677889900aabbccddeeff"),
       ],
       fiatCurrencyCode: 'USD',
       fiatExchangeRate: 161.117245105,
@@ -61,7 +61,7 @@ void main() {
       satoshiFees: 247.0,
       time: 1599238998,
       transactionId: 'c6c782d3af0cf794e963bea40047ce5c65f89ceb22963f279ee215e30bb76db3',
-      type: 'send',
+      type: PaymentType.SEND,
       appAction: "",
     );
 
