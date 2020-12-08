@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:handcash_connect_sdk/handcash_connect.dart';
+import 'package:handcash_connect_sdk/sdk/handcash_connect.dart';
 
 void main() {
   final token = Platform.environment['test_authToken'];
@@ -65,7 +65,6 @@ void main() {
       appAction: "",
     );
 
-    
     final paymentResult = await cloudAccount.wallet.getPayment(transactionId);
 
     expect(paymentResult, correctPaymentResult);

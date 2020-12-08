@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:handcash_connect_sdk/handcash_connect.dart';
+import 'package:handcash_connect_sdk/environments.dart';
+import 'package:handcash_connect_sdk/sdk/handcash_connect.dart';
 
 void main() {
   final token = Platform.environment['test_authToken'];
@@ -37,7 +38,8 @@ void main() {
 
   group('Control errors', () {
     final accountWithoutToken = HandCashCloudAccount.fromAuthToken(environment: Environment.iae());
-    final accountErrorToken = HandCashCloudAccount.fromAuthToken(authToken: '7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0', environment: Environment.iae());
+    final accountErrorToken = HandCashCloudAccount.fromAuthToken(
+        authToken: '7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0', environment: Environment.iae());
     test('return <CloudApiException.invalidRequest if no token', () {
       try {
         accountWithoutToken.profile.getFriends();
@@ -46,7 +48,7 @@ void main() {
       }
     });
 
-     test('return <CloudApiException.unathenticated if token is not valid', () {
+    test('return <CloudApiException.unathenticated if token is not valid', () {
       try {
         accountErrorToken.profile.getFriends();
       } catch (e) {

@@ -1,22 +1,22 @@
 import 'package:chopper/chopper.dart';
-import 'package:handcash_connect_sdk/api/handcash_connect_error_converter.dart';
 import 'package:handcash_connect_sdk/models/payment_result.dart';
 import 'package:handcash_connect_sdk/models/spendable_balance.dart';
 import 'package:handcash_connect_sdk/models/user_profile.dart';
-import 'package:handcash_connect_sdk/services/entities/user_public_response.dart';
-import 'package:handcash_connect_sdk/services/entities/permissions_response.dart';
+import 'package:handcash_connect_sdk/services/handcash_auth_interceptor.dart';
+import 'package:handcash_connect_sdk/services/handcash_connect_error_converter.dart';
 import 'package:handcash_connect_sdk/services/json_serializable_converter.dart';
+import 'package:handcash_connect_sdk/services/profile/entities/permissions_response.dart';
+import 'package:handcash_connect_sdk/services/profile/entities/user_public_response.dart';
 import 'package:handcash_connect_sdk/services/profile/handcash_profile_service.dart';
-import 'package:handcash_connect_sdk/services/handcash_signin_interceptor.dart';
 import 'package:handcash_connect_sdk/services/wallet/handcash_wallet_service.dart';
 
-class HttpFactory {
+class ServiceFactory {
   final String authToken;
   final String baseApiEndpoint;
 
   ChopperClient client;
 
-  HttpFactory({this.authToken, this.baseApiEndpoint}) {
+  ServiceFactory({this.authToken, this.baseApiEndpoint}) {
     client = ChopperClient(
       baseUrl: baseApiEndpoint,
       services: [
@@ -24,7 +24,7 @@ class HttpFactory {
         HandCashWalletService.create(),
       ],
       interceptors: [
-        HandCashSignInInterceptor(authToken: authToken),
+        HandCashAuthInterceptor(authToken: authToken),
       ],
       converter: JsonSerializableConverter({
         PaymentResult: (json) => PaymentResult.fromJson(json),
@@ -37,7 +37,7 @@ class HttpFactory {
     );
   }
 
-  HandCashWalletService wallet() => client.getService<HandCashWalletService>();
+  HandCashWalletService getWalletService() => client.getService<HandCashWalletService>();
 
-  HandCashProfileService profile() => client.getService<HandCashProfileService>();
+  HandCashProfileService getProfileService() => client.getService<HandCashProfileService>();
 }

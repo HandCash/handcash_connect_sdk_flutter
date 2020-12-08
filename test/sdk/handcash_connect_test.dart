@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:handcash_connect_sdk/environments/environments.dart';
-import 'package:handcash_connect_sdk/handcash_connect.dart';
+import 'package:handcash_connect_sdk/environments.dart';
+import 'package:handcash_connect_sdk/sdk/handcash_connect.dart';
 
 void main() {
   test('get redirection URL with default env', () {

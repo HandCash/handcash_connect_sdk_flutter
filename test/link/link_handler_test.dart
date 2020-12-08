@@ -1,9 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:handcash_connect_sdk/handcash_connect.dart';
-import 'package:handcash_connect_sdk/link/link_repository.dart';
+import 'package:handcash_connect_sdk/link/handcash_auth_token_listener.dart';
+import 'package:handcash_connect_sdk/link/link_listener.dart';
+import 'package:handcash_connect_sdk/sdk/handcash_connect.dart';
 import 'package:mockito/mockito.dart';
 
-class MockLinkRepository extends Mock implements LinkRepository {}
+class MockLinkRepository extends Mock implements LinkListener {}
 
 void main() {
   final linkRepository = MockLinkRepository();
@@ -13,30 +14,29 @@ void main() {
   });
 
   group('Correct links', () {
-    test('Get account with token when url is correct in init app', () async {
+    test('Get token when url is correct in init app', () async {
       final correctUrl =
           'https://testing.io/success?authToken=e5f8a23c3b21c86d42aa4d13fade1cb1da9b92f580e30c38fecb20247bf6826d&';
 
       when(linkRepository.getInitialUri()).thenAnswer((_) async => Uri.parse(correctUrl));
       when(linkRepository.getUriLinksStream()).thenAnswer((_) => Stream.fromIterable([]));
-      final account = await LinkHandler(linkDependency: linkRepository).listen().first;
+      final String token = await HandCashAuthTokenListener(linkListener: linkRepository).listen().first;
 
-      expect(account, isA<HandCashCloudAccount>());
+      expect(token, equals('e5f8a23c3b21c86d42aa4d13fade1cb1da9b92f580e30c38fecb20247bf6826d'));
     });
 
-    test('Get account with token when url is correct while app is open', () async {
+    test('Get token when url is correct while app is open', () async {
       final correctUrl =
           'https://testing.io/success?authToken=e5f8a23c3b21c86d42aa4d13fade1cb1da9b92f580e30c38fecb20247bf6826d&';
 
       when(linkRepository.getInitialUri()).thenAnswer((_) async => null);
       when(linkRepository.getUriLinksStream()).thenAnswer((_) => Stream.fromIterable([Uri.parse(correctUrl)]));
-      final account = await LinkHandler(linkDependency: linkRepository).listen().first;
+      final String token = await HandCashAuthTokenListener(linkListener: linkRepository).listen().first;
 
-      expect(account, isA<HandCashCloudAccount>());
+      expect(token, equals('e5f8a23c3b21c86d42aa4d13fade1cb1da9b92f580e30c38fecb20247bf6826d'));
     });
 
-    test('Get account with token when url is correct while app is open and link is opened before another links',
-        () async {
+    test('Get token when url is correct while app is open and link is opened before another links', () async {
       final correctUrl =
           'https://testing.io/success?authToken=e5f8a23c3b21c86d42aa4d13fade1cb1da9b92f580e30c38fecb20247bf6826d&';
 
@@ -47,9 +47,9 @@ void main() {
             Uri.parse(correctUrl),
             Uri.parse('http://url.com'),
           ]));
-      final account = LinkHandler(linkDependency: linkRepository).listen();
+      final Stream<String> token = HandCashAuthTokenListener(linkListener: linkRepository).listen();
 
-      expectLater(account, mayEmit(isA<HandCashCloudAccount>()));
+      expectLater(token, mayEmit(equals('e5f8a23c3b21c86d42aa4d13fade1cb1da9b92f580e30c38fecb20247bf6826d')));
     });
   });
 
@@ -58,17 +58,17 @@ void main() {
     test('No event when url is incorrect in init app', () async {
       when(linkRepository.getInitialUri()).thenAnswer((_) async => Uri.parse(incorrectUrl));
       when(linkRepository.getUriLinksStream()).thenAnswer((_) => Stream.empty());
-      final account = LinkHandler(linkDependency: linkRepository).listen();
+      final Stream<String> token = HandCashAuthTokenListener(linkListener: linkRepository).listen();
 
-      neverEmits(account);
+      neverEmits(token);
     });
 
     test('No event when url is incorrect while app is open', () async {
       when(linkRepository.getInitialUri()).thenAnswer((_) async => null);
       when(linkRepository.getUriLinksStream()).thenAnswer((_) => Stream.fromIterable([Uri.parse(incorrectUrl)]));
-      final account = await LinkHandler(linkDependency: linkRepository).listen().first;
+      final Stream<String> token = HandCashAuthTokenListener(linkListener: linkRepository).listen();
 
-      neverEmits(account);
+      neverEmits(token);
     });
   });
 }

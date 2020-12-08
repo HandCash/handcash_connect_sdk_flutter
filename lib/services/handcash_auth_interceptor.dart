@@ -6,10 +6,10 @@ import 'package:flutter/foundation.dart';
 import 'package:handcash_connect_sdk/services/authentication_hash_signer.dart';
 import 'package:tuple/tuple.dart';
 
-class HandCashSignInInterceptor extends RequestInterceptor {
+class HandCashAuthInterceptor extends RequestInterceptor {
   final String authToken;
 
-  HandCashSignInInterceptor({this.authToken});
+  HandCashAuthInterceptor({this.authToken});
 
   @override
   FutureOr<Request> onRequest(Request request) async {

@@ -1,18 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'payment_request.dart';
+part of 'payment_result_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentRequest _$PaymentRequestFromJson(Map<String, dynamic> json) {
-  return PaymentRequest(
+PaymentResultRequest _$PaymentRequestFromJson(Map<String, dynamic> json) {
+  return PaymentResultRequest(
     json['transactionId'] as String,
   );
 }
 
-Map<String, dynamic> _$PaymentRequestToJson(PaymentRequest instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PaymentRequestToJson(PaymentResultRequest instance) => <String, dynamic>{
       'transactionId': instance.transactionId,
     };

@@ -17,8 +17,7 @@ class _$HandCashWalletService extends HandCashWalletService {
   final definitionType = HandCashWalletService;
 
   @override
-  Future<Response<SpendableBalance>> getSpendableBalanceRequest(
-      SpendableBalanceRequest currencyCode) {
+  Future<Response<SpendableBalance>> getSpendableBalance(SpendableBalanceRequest currencyCode) {
     final $url = '/v1/connect/wallet/spendableBalance';
     final $body = currencyCode;
     final $request = Request('GET', $url, client.baseUrl, body: $body);
@@ -26,8 +25,7 @@ class _$HandCashWalletService extends HandCashWalletService {
   }
 
   @override
-  Future<Response<PaymentResult>> getPayRequest(
-      PaymentParameters paymentParameters) {
+  Future<Response<PaymentResult>> pay(PaymentParameters paymentParameters) {
     final $url = '/v1/connect/wallet/pay';
     final $body = paymentParameters;
     final $request = Request('POST', $url, client.baseUrl, body: $body);
@@ -35,8 +33,7 @@ class _$HandCashWalletService extends HandCashWalletService {
   }
 
   @override
-  Future<Response<PaymentResult>> getPaymentRequest(
-      PaymentRequest queryParameters) {
+  Future<Response<PaymentResult>> getPayment(PaymentResultRequest queryParameters) {
     final $url = '/v1/connect/wallet/payment';
     final $body = queryParameters;
     final $request = Request('GET', $url, client.baseUrl, body: $body);

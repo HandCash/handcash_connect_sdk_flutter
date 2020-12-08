@@ -1,8 +1,8 @@
 import 'package:chopper/chopper.dart';
 import 'package:handcash_connect_sdk/models/user_profile.dart';
-import 'package:handcash_connect_sdk/services/entities/handle_request.dart';
-import 'package:handcash_connect_sdk/services/entities/user_public_response.dart';
-import 'package:handcash_connect_sdk/services/entities/permissions_response.dart';
+import 'package:handcash_connect_sdk/services/profile/entities/handle_request.dart';
+import 'package:handcash_connect_sdk/services/profile/entities/permissions_response.dart';
+import 'package:handcash_connect_sdk/services/profile/entities/user_public_response.dart';
 
 part "handcash_profile_service.chopper.dart";
 
