@@ -35,7 +35,7 @@ void main() {
     expect(createPaymentResult, isA<PaymentResult>());
     expect(createPaymentResult.fiatCurrencyCode, 'USD');
     expect(createPaymentResult.appAction, 'test');
-    expect(createPaymentResult.attachments[0].format, 'hex');
+    expect(createPaymentResult.attachments[0].format, AttachmentType.HEX);
     expect(createPaymentResult.attachments[0].value, '0011223344556677889900AABBCCDDEEFF'.toLowerCase());
   });
 
