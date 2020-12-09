@@ -5,8 +5,8 @@ import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
 
 void main() {
   final token = Platform.environment['test_authToken'];
-  HandCashConnect cloudAccount =
-      HandCashConnect.fromAuthToken(authToken: token, environment: Environment.iae());
+  HandCashCloudAccount cloudAccount =
+      HandCashCloudAccount.fromAuthToken(authToken: token, environment: Environment.iae());
 
   test('should pay to multiple people using handles, paymails and attaching data', () async {
     final paymentsParameters = PaymentParameters(
