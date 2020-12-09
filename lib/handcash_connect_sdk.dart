@@ -4,6 +4,7 @@ export './src/link/link_listener.dart';
 export './src/link/handcash_auth_token_listener.dart';
 export './src/models/models.dart';
 export './src/sdk/handcash_connect.dart';
+export './src/sdk/handcash_cloud_account.dart';
 export './src/environments.dart';
 export './src/sdk/wallet.dart';
 export './src/sdk/profile.dart';
