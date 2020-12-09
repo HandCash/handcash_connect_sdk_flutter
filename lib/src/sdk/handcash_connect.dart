@@ -3,16 +3,16 @@ import 'package:handcash_connect_sdk/src/sdk/profile.dart';
 import 'package:handcash_connect_sdk/src/sdk/wallet.dart';
 import 'package:handcash_connect_sdk/src/services/service_factory.dart';
 
-class HandCashCloudAccount {
+class HandCashConnect {
   final Wallet wallet;
   final Profile profile;
 
-  HandCashCloudAccount({
+  HandCashConnect({
     this.wallet,
     this.profile,
   });
 
-  factory HandCashCloudAccount.fromAuthToken({
+  factory HandCashConnect.fromAuthToken({
     String authToken,
     Environment environment = const Environment.production(),
   }) {
@@ -21,7 +21,7 @@ class HandCashCloudAccount {
       baseApiEndpoint: environment.apiEndpoint,
     );
 
-    return HandCashCloudAccount(
+    return HandCashConnect(
       wallet: Wallet(serviceFactory.getWalletService()),
       profile: Profile(serviceFactory.getProfileService()),
     );
