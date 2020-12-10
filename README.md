@@ -13,10 +13,10 @@ Configure Android an iOS apps to handle links [tutorial](https://pub.dev/package
 Start listening links
 
 ```Dart
-   final listener = LinkHandler().listen();
+   final listener = HandCashAuthTokenListener().listen();
 
-   // Listen for every account created opening a link
-   listener.forEach((HandCashCloudAccount account) { });
+   // Listen for every authToken received
+   listener.forEach((String authToken) { });
 ```
 
 
@@ -34,7 +34,7 @@ The following code shows how to make a simple payment:
 
 ```Dart
 
-final cloudAccount = HandCashCloudAccount.fromAuthToken(authToken: '98a8ca...7702aac1');
+final cloudAccount = HandCashConnect(appId: '655eec13...').getAccountFromAuthToken('98a8ca...7702aac1');
 
 final paymentParameters = PaymentParameters(
       description: 'Hold my beer!🍺',

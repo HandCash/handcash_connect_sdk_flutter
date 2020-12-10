@@ -1,32 +1,27 @@
-import 'package:handcash_connect_sdk/src/environments.dart';
-import 'package:handcash_connect_sdk/src/sdk/profile.dart';
-import 'package:handcash_connect_sdk/src/sdk/wallet.dart';
+import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
+import 'package:handcash_connect_sdk/src/sdk/handcash_cloud_account.dart';
 import 'package:handcash_connect_sdk/src/services/service_factory.dart';
 
-class HandCashCloudAccount {
-  final Wallet wallet;
-  final Profile profile;
+class HandCashConnect {
+  final String appId;
+  final Environment environment;
 
-  HandCashCloudAccount({
-    this.wallet,
-    this.profile,
+  HandCashConnect({
+    this.appId,
+    this.environment = const Environment.production(),
   });
 
-  factory HandCashCloudAccount.fromAuthToken({
-    String authToken,
-    Environment environment = const Environment.production(),
-  }) {
+  HandCashCloudAccount getAccountFromAuthToken(String authToken) {
     final serviceFactory = ServiceFactory(
       authToken: authToken,
       baseApiEndpoint: environment.apiEndpoint,
     );
 
     return HandCashCloudAccount(
-      wallet: Wallet(serviceFactory.getWalletService()),
-      profile: Profile(serviceFactory.getProfileService()),
+      Wallet(serviceFactory.getWalletService()),
+      Profile(serviceFactory.getProfileService()),
     );
   }
 
-  static String getRedirectionLoginUrl({String appId, Environment env = const Environment.production()}) =>
-      '${env.clientUrl}/#/authorizeApp?appId=$appId';
+  String getRedirectionLoginUrl() => '${environment.clientUrl}/#/authorizeApp?appId=$appId';
 }

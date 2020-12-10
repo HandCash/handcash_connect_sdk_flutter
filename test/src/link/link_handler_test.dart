@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
+import 'package:handcash_connect_sdk/src/link/link_listener.dart';
 import 'package:mockito/mockito.dart';
 
 class MockLinkRepository extends Mock implements LinkListener {}

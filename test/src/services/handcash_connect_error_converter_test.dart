@@ -1,6 +1,7 @@
 import 'package:chopper/chopper.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
+import 'package:handcash_connect_sdk/src/services/handcash_connect_error_converter.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
