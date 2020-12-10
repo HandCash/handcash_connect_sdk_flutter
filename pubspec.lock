@@ -72,7 +72,7 @@ packages:
     source: hosted
     version: "1.3.11"
   build_runner:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: build_runner
       url: "https://pub.dartlang.org"
@@ -128,7 +128,7 @@ packages:
     source: hosted
     version: "3.0.6"
   chopper_generator:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: chopper_generator
       url: "https://pub.dartlang.org"
@@ -234,7 +234,7 @@ packages:
     source: sdk
     version: "0.0.0"
   freezed:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: freezed
       url: "https://pub.dartlang.org"
@@ -318,7 +318,7 @@ packages:
     source: hosted
     version: "3.1.1"
   json_serializable:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: json_serializable
       url: "https://pub.dartlang.org"
