@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ConnectButton extends StatelessWidget {
+
+  final HandCashConnect handCashConnect;
+
+  const ConnectButton({Key key, @required this.handCashConnect}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,7 +51,7 @@ class ConnectButton extends StatelessWidget {
         ),
         color: Colors.transparent,
         onPressed: () {
-          _launchURL('url');
+          _launchURL(handCashConnect.getRedirectionLoginUrl());
         },
       ),
     );

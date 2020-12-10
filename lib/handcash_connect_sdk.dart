@@ -8,3 +8,4 @@ export './src/environments.dart';
 export './src/sdk/wallet.dart';
 export './src/sdk/profile.dart';
 export './src/services/handcash_connect_api_error.dart';
+export './src/ui/connect_button.dart';
