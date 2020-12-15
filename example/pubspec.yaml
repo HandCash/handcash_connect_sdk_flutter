@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   handcash_connect_sdk:
     path: ../
+  cubit: ^0.1.2
+  flutter_cubit: ^0.1.1
 
 
   # The following adds the Cupertino Icons font to your application.

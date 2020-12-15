@@ -1,42 +1,34 @@
+import 'package:example/cubits/authentication/authentication_cubit.dart';
+import 'package:example/cubits/handcash_account/handcash_account_cubit.dart';
+import 'package:example/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:handcash_connect_sdk/ui/connect_button.dart';
+import 'package:flutter_cubit/flutter_cubit.dart';
+import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
+
+final handCashConnect = HandCashConnect(appId: '5fd93c56cdaa280ea43bdd66');
+final HandCashAccountCubit handCashAccountCubit = HandCashAccountCubit();
+final AuthenticationCubit authenticationCubit = AuthenticationCubit(handCashConnect, handCashAccountCubit);
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  HandCashAuthTokenListener().listen((authToken) => authenticationCubit.onGetAuthToken(authToken));
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: ConnectButton()
+    return MultiCubitProvider(
+      providers: [
+        CubitProvider.value(value: authenticationCubit),
+        CubitProvider.value(value: handCashAccountCubit),
+      ],
+      child: MaterialApp(
+        title: 'HandCash Connect SDK',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HomePage(),
       ),
     );
   }
