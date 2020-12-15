@@ -58,4 +58,5 @@ const _$PermissionsEnumMap = {
   Permissions.DECRYPT: 'DECRYPT',
   Permissions.PAY: 'PAY',
   Permissions.FRIENDS: 'FRIENDS',
+  Permissions.SIGN_DATA: 'SIGN_DATA',
 };
