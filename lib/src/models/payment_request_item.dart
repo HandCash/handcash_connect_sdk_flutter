@@ -4,7 +4,9 @@ part 'payment_request_item.g.dart';
 
 @JsonSerializable()
 class PaymentRequestItem {
+  /// Receiver handler without $ or paymail 
   final String destination;
+  /// CurrencyCode - ISO4218: "USD", "EUR", ...
   final String currencyCode;
   final double sendAmount;
 
