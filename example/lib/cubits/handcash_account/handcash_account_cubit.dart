@@ -1,4 +1,4 @@
-import 'package:cubit/cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
 import 'package:meta/meta.dart';
 
