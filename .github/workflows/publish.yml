@@ -1,0 +1,26 @@
+name: Publish package on Pub.dev
+
+on: 
+  push:
+    branches:
+       - "master"
+
+jobs:
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 'Upload package'
+        id: 'upload'
+        uses: k-paxian/dart-package-publisher@master
+        with:
+          accessToken: ${{ secrets.ACCESS_TOKEN }}
+          refreshToken: ${{ secrets.REFRESH_TOKEN }}
+        
+      - run: echo "Package is published ${{ steps.upload.outputs.success }}"
+      - run: echo "Package local version is ${{ steps.upload.outputs.localVersion }}"
+      - run: echo "Package published version is ${{ steps.upload.outputs.remoteVersion }}"
+      - run: echo "Dart version used ${{ steps.upload.outputs.dartVersion }}"
+      - run: echo "Flutter version used ${{ steps.upload.outputs.flutterVersion }}"
