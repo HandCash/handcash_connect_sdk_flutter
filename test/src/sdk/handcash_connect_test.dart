@@ -5,8 +5,9 @@ void main() {
   test('get redirection URL with default env', () {
     const appId = '1234567890';
     final correctUrl = 'https://app.handcash.io/#/authorizeApp?appId=$appId';
+    HandCashConnect.initialize(appId: appId);
 
-    final url = HandCashConnect(appId: appId).getRedirectionLoginUrl();
+    final url = HandCashConnect.getRedirectionLoginUrl();
 
     expect(url, correctUrl);
   });
@@ -14,8 +15,9 @@ void main() {
   test('get redirection URL beta env', () {
     const appId = '1234567890';
     final correctUrl = 'https://beta-app.handcash.io/#/authorizeApp?appId=$appId';
+    HandCashConnect.initialize(appId: appId, environment: Environment.beta());
 
-    final url = HandCashConnect(appId: appId, environment: Environment.beta()).getRedirectionLoginUrl();
+    final url = HandCashConnect.getRedirectionLoginUrl();
 
     expect(url, correctUrl);
   });
@@ -24,7 +26,9 @@ void main() {
     const appId = '1234567890';
     final correctUrl = 'https://iae-app.handcash.io/#/authorizeApp?appId=$appId';
 
-    final url = HandCashConnect(appId: appId, environment: Environment.iae()).getRedirectionLoginUrl();
+    HandCashConnect.initialize(appId: appId, environment: Environment.iae());
+
+    final url = HandCashConnect.getRedirectionLoginUrl();
 
     expect(url, correctUrl);
   });

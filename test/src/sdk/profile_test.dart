@@ -5,7 +5,8 @@ import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
 
 void main() {
   final token = Platform.environment['test_authToken'];
-  final cloudAccount = HandCashConnect(environment: Environment.iae()).getAccountFromAuthToken(token);
+  HandCashConnect.initialize(appId: 'id', environment: Environment.iae());
+  final cloudAccount = HandCashConnect.getAccountFromAuthToken(token);
 
   test('should get user public profile', () async {
     final userProfile = await cloudAccount.profile.getCurrentProfile();
@@ -36,7 +37,7 @@ void main() {
   });
 
   group('Control errors', () {
-    final accountErrorToken = HandCashConnect(environment: Environment.iae()).getAccountFromAuthToken(
+    final accountErrorToken = HandCashConnect.getAccountFromAuthToken(
         '7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0');
 
     test('return <CloudApiException.unathenticated if token is not valid', () {
