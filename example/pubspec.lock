@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0-nullsafety.3"
+  bloc:
+    dependency: transitive
+    description:
+      name: bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.1.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -127,13 +134,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.2"
-  cubit:
-    dependency: "direct main"
-    description:
-      name: cubit
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.2"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -174,13 +174,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_cubit:
+  flutter_bloc:
     dependency: "direct main"
     description:
-      name: flutter_cubit
+      name: flutter_bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.1"
+    version: "6.1.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
