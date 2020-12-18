@@ -16,8 +16,7 @@ jobs:
         id: 'upload'
         uses: k-paxian/dart-package-publisher@master
         with:
-          accessToken: ${{ secrets.ACCESS_TOKEN }}
-          refreshToken: ${{ secrets.REFRESH_TOKEN }}
+          credentialJson: ${{ secrets.CREDENTIAL_JSON }}
         
       - run: echo "Package is published ${{ steps.upload.outputs.success }}"
       - run: echo "Package local version is ${{ steps.upload.outputs.localVersion }}"
