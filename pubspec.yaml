@@ -1,7 +1,6 @@
 name: handcash_connect_sdk
 description: A new Flutter package project.
 version: 0.0.1
-author: HanCash Labs S.L
 homepage: https://github.com/HandCash/handcash_connect_sdk_flutter
 
 environment:
@@ -21,6 +20,9 @@ dependencies:
   uni_links: ^0.4.0
   rxdart: ^0.25.0
   freezed: ^0.11.6
+  http: ^0.12.2
+  freezed_annotation: ^0.12.0
+  convert: ^2.1.1
 
 dev_dependencies:
   flutter_test:
