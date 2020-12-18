@@ -1,6 +1,6 @@
 name: handcash_connect_sdk
 description: A new Flutter package project.
-version: 0.0.1
+version: 0.1.0-dev
 homepage: https://github.com/HandCash/handcash_connect_sdk_flutter
 
 environment:
