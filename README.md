@@ -38,23 +38,15 @@ For your domain
 
 ```
 
-
-## Start listening links
-
-```Dart
-   HandCashAuthTokenListener().listen((String authToken) => {});
-```
-
-
 ## Initialize the SDK
 
-To start, you will need to initializate the SDK, call initialize method with your app ID and Enviroment.
+To start, you need to initializate the SDK, call initialize method passing your app ID.
 
 ```Dart
-  HandCashConnect.initialize(appId: '5fd93c56cdaa280ea43bdd66', environment: Environment.production());
+  HandCashConnect.initialize(appId: '5fd93c56cdaa280ea43bdd66');
 ```
 
-Before, you will need to create an instance of `HandCashCloudAccount`. This object allows you to interact with the SDK.
+Then, you will need to create an instance of `HandCashCloudAccount`. This object allows you to access users account and interact with the SDK.
 
 ```Dart
 final account = HandCashConnect.getAccountFromAuthToken(authToken);
@@ -62,13 +54,22 @@ final account = HandCashConnect.getAccountFromAuthToken(authToken);
 
 A `HandCashCloudAccount` requires an `authToken` that you get from users later they authorize your app.
 
-You can find more about [the user authorization process](https://handcash.github.io/handcash-connect-sdk-js-beta-docs/#/user-authorization).
+You can find more about [the user authorization process](https://docs.handcash.dev/authorization/).
+
+## Listen for new authTokens
+
+```Dart
+HandCashAuthTokenListener().listen((String authToken) => {
+  // You got it!
+});
+```
 
 ## Your first payment
 
 The following code shows how to make a simple payment:
 
 ```Dart
+HandCashConnect.initialize(appId: '5fd93c56cdaa280ea43bdd66')
 
 final cloudAccount = HandCashConnect.getAccountFromAuthToken('98a8ca...7702aac1');
 
