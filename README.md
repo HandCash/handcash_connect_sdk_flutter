@@ -1,28 +1,64 @@
-## Install
+# HandCash Connect SDK
 
-Go to pub.dev
+![Tests](https://github.com/HandCash/handcash_connect_sdk_flutter/workflows/Package%20tests%20CI/badge.svg)
+[![Coverage](https://codecov.io/gh/HandCash/handcash_connect_sdk_flutter/branch/master/graph/badge.svg?token=UA5JTKTXW9)](https://codecov.io/gh/HandCash/handcash_connect_sdk_flutter)
+[![pub package](https://img.shields.io/pub/v/handcash_connect_sdk.svg)](https://pub.dev/packages/handcash_connect_sdk)
+[![Github stars](https://img.shields.io/github/stars/HandCash/handcash_connect_sdk_flutter.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/HandCash/handcash_connect_sdk_flutter)
 
-Add in your pubspec.yaml
 
+## Getting Started
 
+```yaml
+dependencies:
+ handcash_connect_sdk: last_version
+```
 
 ## Configure your app to handle links
 
 Configure Android an iOS apps to handle links [tutorial](https://pub.dev/packages/uni_links#permission)
 
-Start listening links
+### Follow the implementation in example app
+
+Go to example/android/app/src/main/AndroidManifest.xml
+
+```XML
+
+<data
+   android:host="testing.handcash.dev"
+   android:scheme="https" />
+```
+
+For your domain
+
+```XML
+
+<data
+   android:host="your.domain.com"
+   android:scheme="https" />
+
+```
+
+
+## Start listening links
 
 ```Dart
-   final listener = HandCashAuthTokenListener().listen();
-
-   // Listen for every authToken received
-   listener.forEach((String authToken) { });
+   HandCashAuthTokenListener().listen((String authToken) => {});
 ```
 
 
 ## Initialize the SDK
 
-To start, you will need to create an instance of `HandCashCloudAccount`. This object allows you to interact with the SDK.
+To start, you will need to initializate the SDK, call initialize method with your app ID and Enviroment.
+
+```Dart
+  HandCashConnect.initialize(appId: '5fd93c56cdaa280ea43bdd66', environment: Environment.production());
+```
+
+Before, you will need to create an instance of `HandCashCloudAccount`. This object allows you to interact with the SDK.
+
+```Dart
+final account = HandCashConnect.getAccountFromAuthToken(authToken);
+```
 
 A `HandCashCloudAccount` requires an `authToken` that you get from users later they authorize your app.
 
@@ -34,7 +70,7 @@ The following code shows how to make a simple payment:
 
 ```Dart
 
-final cloudAccount = HandCashConnect(appId: '655eec13...').getAccountFromAuthToken('98a8ca...7702aac1');
+final cloudAccount = HandCashConnect.getAccountFromAuthToken('98a8ca...7702aac1');
 
 final paymentParameters = PaymentParameters(
       description: 'Hold my beer!🍺',
