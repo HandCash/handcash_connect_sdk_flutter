@@ -3,18 +3,21 @@ import 'package:handcash_connect_sdk/src/sdk/handcash_cloud_account.dart';
 import 'package:handcash_connect_sdk/src/services/service_factory.dart';
 
 class HandCashConnect {
-  final String appId;
-  final Environment environment;
+  static String _appId;
+  static Environment _environment;
 
-  HandCashConnect({
-    this.appId,
-    this.environment = const Environment.production(),
-  });
+  HandCashConnect._();
 
-  HandCashCloudAccount getAccountFromAuthToken(String authToken) {
+  static void initialize({String appId, Environment environment = const Environment.production()}) {
+    _appId = appId;
+    _environment = environment;
+  }
+
+  static HandCashCloudAccount getAccountFromAuthToken(String authToken) {
+    _ensureInitialized();
     final serviceFactory = ServiceFactory(
       authToken: authToken,
-      baseApiEndpoint: environment.apiEndpoint,
+      baseApiEndpoint: _environment.apiEndpoint,
     );
 
     return HandCashCloudAccount(
@@ -23,5 +26,14 @@ class HandCashConnect {
     );
   }
 
-  String getRedirectionLoginUrl() => '${environment.clientUrl}/#/authorizeApp?appId=$appId';
+  static String getRedirectionLoginUrl() {
+    _ensureInitialized();
+    return '${_environment.clientUrl}/#/authorizeApp?appId=$_appId';
+  }
+
+  static void _ensureInitialized() {
+    assert(_isInitialized(), 'You need to call before HandCashConnect.initialize(appId: "yourAppId")');
+  }
+
+  static bool _isInitialized() => _appId != null && _environment != null;
 }

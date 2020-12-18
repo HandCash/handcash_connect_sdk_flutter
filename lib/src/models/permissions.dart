@@ -11,4 +11,6 @@ enum Permissions {
   PAY,
   @JsonValue("FRIENDS")
   FRIENDS,
+  @JsonValue("SIGN_DATA")
+  SIGN_DATA,
 }
