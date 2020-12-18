@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildAccountWidget() {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Try HandCash Connect SDK in Flutter!'),
+        title: Text('HandCash Connect SDK'),
       ),
       body: Center(child: BlocBuilder<HandCashAccountCubit, HandCashAccountState>(
         builder: (context, state) {
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                           backgroundColor: Theme.of(context).primaryColor,
                           padding: EdgeInsets.all(8),
                           content: Text(
-                            'Payment send sucesfull! 🍾',
+                            'Payment sent! 🍾',
                             style: TextStyle(fontSize: 18),
                           ),
                         ),
@@ -74,8 +74,8 @@ class _HomePageState extends State<HomePage> {
                       minWidth: 300,
                       onPressed: () => context.read<PaymentCubit>().pay(
                             PaymentParameters(
-                              appAction: 'Testing Connect SDK',
-                              description: 'Hello!',
+                              appAction: 'tip',
+                              description: 'Testing Connect SDK',
                               receivers: [
                                 PaymentRequestItem(
                                   currencyCode: 'USD',
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildLoginWidget() {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome!'),
+        title: Text('Welcome to HandCash Connect!'),
       ),
       body: Center(
         child: ConnectButton(),
