@@ -1,0 +1,25 @@
+# https://docs.codecov.io/docs/commit-status
+coverage:
+  status:
+    project:
+      default:
+        # basic
+        target: 100%
+        threshold: 75%
+        base: auto
+        # advanced
+        branches: null
+        if_no_uploads: error
+        if_not_found: success
+        if_ci_failed: error
+        only_pulls: false
+        flags: null
+        paths: null
+ignore:
+  - "**/*.g.dart"
+  - "lib/src/models/*"
+  - "lib/**/*.chopper.dart"
+  - "lib/src/services/profile/entities/*"
+  - "lib/src/services/wallet/entities/*"
+  - "lib/src/link/link_repository.dart"
+  - "lib/src/ui/*"

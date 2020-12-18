@@ -16,6 +16,10 @@ jobs:
           channel: "stable"
 
       - name: Run test
-        run: flutter test
+        run: flutter test --coverage
         env:
           test_authToken: ${{ secrets.TEST_AUTH_TOKEN }}
+
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
