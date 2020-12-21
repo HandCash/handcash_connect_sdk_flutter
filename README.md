@@ -58,6 +58,8 @@ You can find more about [the user authorization process](https://docs.handcash.d
 
 ## Listen for new authTokens
 
+**Not supported for Flutter web**
+
 ```Dart
 HandCashAuthTokenListener().listen((String authToken) => {
   // You got it!
