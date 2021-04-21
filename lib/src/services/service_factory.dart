@@ -1,4 +1,5 @@
 import 'package:chopper/chopper.dart';
+import 'package:handcash_connect_sdk/src/models/exchange_rate.dart';
 import 'package:handcash_connect_sdk/src/models/payment_result.dart';
 import 'package:handcash_connect_sdk/src/models/spendable_balance.dart';
 import 'package:handcash_connect_sdk/src/models/user_profile.dart';
@@ -32,6 +33,7 @@ class ServiceFactory {
         UserProfile: (json) => UserProfile.fromJson(json),
         PermissionsResponse: (json) => PermissionsResponse.fromJson(json),
         UserPublicResponse: (json) => UserPublicResponse.fromJson(json),
+        ExchangeRate: (json) => ExchangeRate.fromJson(json),
       }),
       errorConverter: HandCashConnectErrorConverter(),
     );
