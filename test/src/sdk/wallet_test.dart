@@ -83,4 +83,11 @@ void main() {
     expect(spendableBalance, isA<SpendableBalance>());
     expect(spendableBalance.currencyCode, 'EUR');
   });
+
+  test('should get exchange rate in USD', () async {
+    final exchangeRate = await cloudAccount.wallet.getExchangeRate('USD');
+
+    expect(exchangeRate, isA<ExchangeRate>());
+    expect(exchangeRate.fiatSymbol, 'USD');
+  });
 }
