@@ -26,7 +26,7 @@ class HandCashConnect {
     );
   }
 
-  static String getRedirectionLoginUrl({Map<String, dynamic> queryParameters}) {
+  static String getRedirectionLoginUrl({Map<String, dynamic> queryParameters = const {}}) {
     _ensureInitialized();
     final parameters = _generateQueryParameters(queryParameters);
     return '${_environment.clientUrl}/#/authorizeApp?appId=$_appId$parameters';
