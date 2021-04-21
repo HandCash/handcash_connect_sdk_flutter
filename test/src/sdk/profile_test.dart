@@ -14,6 +14,7 @@ void main() {
     expect(userProfile, isA<UserProfile>());
     expect(userProfile.privateProfile != null, true);
     expect(userProfile.publicProfile != null, true);
+    expect(BitcoinUnits.values.contains(userProfile.publicProfile.bitcoinUnit), true);
   });
 
   test('should get user friends list', () async {
