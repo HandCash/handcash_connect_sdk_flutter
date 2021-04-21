@@ -41,4 +41,11 @@ class _$HandCashWalletService extends HandCashWalletService {
     final $request = Request('GET', $url, client.baseUrl, body: $body);
     return client.send<PaymentResult, PaymentResult>($request);
   }
+
+  @override
+  Future<Response<ExchangeRate>> getExchangeRate(String currencyCode) {
+    final $url = '/v1/connect/wallet/exchangeRate/$currencyCode';
+    final $request = Request('GET', $url, client.baseUrl);
+    return client.send<ExchangeRate, ExchangeRate>($request);
+  }
 }
