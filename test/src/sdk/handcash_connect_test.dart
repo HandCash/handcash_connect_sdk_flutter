@@ -32,4 +32,14 @@ void main() {
 
     expect(url, correctUrl);
   });
+
+  test('get redirection URL with default env and queryParameters included', () {
+    const appId = '1234567890';
+    final correctUrl = 'https://app.handcash.io/#/authorizeApp?appId=$appId&key=value&key2=value2';
+    HandCashConnect.initialize(appId: appId);
+
+    final url = HandCashConnect.getRedirectionLoginUrl(queryParameters: {'key' : 'value', 'key2' : 'value2'});
+
+    expect(url, correctUrl);
+  });
 }
