@@ -2,6 +2,7 @@ import 'package:chopper/chopper.dart';
 import 'package:handcash_connect_sdk/src/models/payment_parameters.dart';
 import 'package:handcash_connect_sdk/src/models/payment_result.dart';
 import 'package:handcash_connect_sdk/src/models/spendable_balance.dart';
+import 'package:handcash_connect_sdk/src/models/exchange_rate.dart';
 import 'package:handcash_connect_sdk/src/services/wallet/entities/payment_result_request.dart';
 import 'package:handcash_connect_sdk/src/services/wallet/entities/spendable_balance_request.dart';
 
@@ -19,4 +20,7 @@ abstract class HandCashWalletService extends ChopperService {
 
   @Get(path: '/payment')
   Future<Response<PaymentResult>> getPayment(@Body() PaymentResultRequest queryParameters);
+
+  @Get(path: '/exchangeRate/{currencyCode}')
+  Future<Response<ExchangeRate>> getExchangeRate(@Path() String currencyCode);
 }
