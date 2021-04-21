@@ -12,3 +12,4 @@ export './transaction_participant.dart';
 export './user_profile.dart';
 export './attachment_type.dart';
 export './payment_type.dart';
+export './bitcoin_units.dart';
