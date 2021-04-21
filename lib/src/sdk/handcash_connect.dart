@@ -26,9 +26,10 @@ class HandCashConnect {
     );
   }
 
-  static String getRedirectionLoginUrl() {
+  static String getRedirectionLoginUrl({Map<String, dynamic> queryParameters}) {
     _ensureInitialized();
-    return '${_environment.clientUrl}/#/authorizeApp?appId=$_appId';
+    final parameters = _generateQueryParameters(queryParameters);
+    return '${_environment.clientUrl}/#/authorizeApp?appId=$_appId$parameters';
   }
 
   static void _ensureInitialized() {
@@ -36,4 +37,9 @@ class HandCashConnect {
   }
 
   static bool _isInitialized() => _appId != null && _environment != null;
+
+  static String _generateQueryParameters(Map<String, dynamic> queryParameters) => queryParameters.entries.fold(
+      '',
+      ((acc, query) =>
+          acc + '&${Uri.encodeQueryComponent(query.key)}=${Uri.encodeQueryComponent(query.value.toString())}'));
 }
