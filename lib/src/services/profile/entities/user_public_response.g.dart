@@ -8,11 +8,9 @@ part of 'user_public_response.dart';
 
 UserPublicResponse _$UserPublicResponseFromJson(Map<String, dynamic> json) {
   return UserPublicResponse(
-    items: (json['items'] as List)
-        ?.map((e) => e == null
-            ? null
-            : UserPublicProfile.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    items: (json['items'] as List<dynamic>)
+        .map((e) => UserPublicProfile.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 

@@ -8,9 +8,9 @@ part of 'exchange_rate.dart';
 
 ExchangeRate _$ExchangeRateFromJson(Map<String, dynamic> json) {
   return ExchangeRate(
-    fiatSymbol: json['fiatSymbol'] as String,
-    rate: (json['rate'] as num)?.toDouble(),
-    exchangeRateVersion: json['exchangeRateVersion'] as String,
+    fiatSymbol: json['fiatSymbol'] as String?,
+    rate: (json['rate'] as num?)?.toDouble(),
+    exchangeRateVersion: json['exchangeRateVersion'] as String?,
   );
 }
 

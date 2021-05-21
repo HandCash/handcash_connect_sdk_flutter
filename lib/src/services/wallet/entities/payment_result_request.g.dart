@@ -8,7 +8,7 @@ part of 'payment_result_request.dart';
 
 PaymentResultRequest _$PaymentResultRequestFromJson(Map<String, dynamic> json) {
   return PaymentResultRequest(
-    json['transactionId'] as String,
+    json['transactionId'] as String?,
   );
 }
 

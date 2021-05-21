@@ -6,10 +6,10 @@ part 'payment_parameters.g.dart';
 
 @JsonSerializable(includeIfNull: false)
 class PaymentParameters {
-  final String description;
-  final String appAction;
-  final List<PaymentRequestItem> receivers;
-  final Attachment attachment;
+  final String? description;
+  final String? appAction;
+  final List<PaymentRequestItem>? receivers;
+  final Attachment? attachment;
 
   PaymentParameters({
     this.description,
@@ -18,7 +18,8 @@ class PaymentParameters {
     this.attachment,
   });
 
-  factory PaymentParameters.fromJson(Map<String, dynamic> json) => _$PaymentParametersFromJson(json);
+  factory PaymentParameters.fromJson(Map<String, dynamic> json) =>
+      _$PaymentParametersFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentParametersToJson(this);
 }

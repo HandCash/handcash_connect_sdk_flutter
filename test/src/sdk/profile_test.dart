@@ -6,35 +6,38 @@ import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
 void main() {
   final token = Platform.environment['test_authToken'];
   HandCashConnect.initialize(appId: 'id', environment: Environment.iae());
-  final cloudAccount = HandCashConnect.getAccountFromAuthToken(token);
+  final cloudAccount = HandCashConnect.getAccountFromAuthToken(token ?? '');
 
   test('should get user public profile', () async {
     final userProfile = await cloudAccount.profile.getCurrentProfile();
 
     expect(userProfile, isA<UserProfile>());
-    expect(userProfile.privateProfile != null, true);
-    expect(userProfile.publicProfile != null, true);
-    expect(BitcoinUnits.values.contains(userProfile.publicProfile.bitcoinUnit), true);
+    expect(BitcoinUnits.values.contains(userProfile!.publicProfile.bitcoinUnit),
+        true);
   });
 
   test('should get user friends list', () async {
-    final friends = await cloudAccount.profile.getFriends();
+    final friends = await (cloudAccount.profile.getFriends());
 
     expect(friends, isA<List<UserPublicProfile>>());
-    expect(friends.length > 0, true);
+    expect(friends!.length > 0, true);
   });
 
   test('should get public user profiles by handle', () async {
-    final publicProfiles = await cloudAccount.profile.getPublicProfilesByHandle(['tester']);
+    final publicProfiles =
+        await (cloudAccount.profile.getPublicProfilesByHandle(['tester']));
 
     expect(publicProfiles, isA<List<UserPublicProfile>>());
-    expect(publicProfiles.length > 0, true);
+    expect(publicProfiles!.length > 0, true);
   });
 
   test('should get current user permissions', () async {
-    final userPermissions = await cloudAccount.profile.getPermissions();
+    final userPermissions = await (cloudAccount.profile.getPermissions());
 
-    expect(userPermissions.any((permission) => Permissions.values.contains(permission)), true);
+    expect(
+        userPermissions
+            ?.any((permission) => Permissions.values.contains(permission)),
+        true);
   });
 
   group('Control errors', () {

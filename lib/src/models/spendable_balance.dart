@@ -4,9 +4,9 @@ part 'spendable_balance.g.dart';
 
 @JsonSerializable()
 class SpendableBalance {
-  final double spendableSatoshiBalance;
-  final double spendableFiatBalance;
-  final String currencyCode;
+  final double? spendableSatoshiBalance;
+  final double? spendableFiatBalance;
+  final String? currencyCode;
 
   SpendableBalance({
     this.spendableSatoshiBalance,
@@ -14,7 +14,8 @@ class SpendableBalance {
     this.currencyCode,
   });
 
-  factory SpendableBalance.fromJson(Map<String, dynamic> json) => _$SpendableBalanceFromJson(json);
+  factory SpendableBalance.fromJson(Map<String, dynamic> json) =>
+      _$SpendableBalanceFromJson(json);
 
   Map<String, dynamic> toJson() => _$SpendableBalanceToJson(this);
 }

@@ -1,4 +1,3 @@
-
 import 'package:handcash_connect_sdk/src/models/bitcoin_units.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -15,16 +14,17 @@ class UserPublicProfile {
   final BitcoinUnits bitcoinUnit;
 
   UserPublicProfile({
-    this.id,
-    this.handle,
-    this.paymail,
-    this.displayName,
-    this.avatarUrl,
-    this.localCurrencyCode,
-    this.bitcoinUnit,
+    required this.id,
+    required this.handle,
+    required this.paymail,
+    required this.displayName,
+    required this.avatarUrl,
+    required this.localCurrencyCode,
+    required this.bitcoinUnit,
   });
 
-  factory UserPublicProfile.fromJson(Map<String, dynamic> json) => _$UserPublicProfileFromJson(json);
+  factory UserPublicProfile.fromJson(Map<String, dynamic> json) =>
+      _$UserPublicProfileFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserPublicProfileToJson(this);
 }

@@ -31,7 +31,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('HandCash Connect SDK'),
       ),
-      body: Center(child: BlocBuilder<HandCashAccountCubit, HandCashAccountState>(
+      body:
+          Center(child: BlocBuilder<HandCashAccountCubit, HandCashAccountState>(
         builder: (context, state) {
           if (state is HandCashAccountReady) {
             return Column(
@@ -39,7 +40,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 100),
                 CircleAvatar(
                   radius: 90,
-                  backgroundImage: NetworkImage(state.userProfile.publicProfile.avatarUrl),
+                  backgroundImage:
+                      NetworkImage(state.userProfile.publicProfile.avatarUrl),
                 ),
                 const SizedBox(height: 20),
                 Text(
@@ -64,7 +66,9 @@ class _HomePageState extends State<HomePage> {
                   builder: (context, walletState) {
                     return MaterialButton(
                       child: walletState is DoingPayment
-                          ? CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.black))
+                          ? CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.black))
                           : Text(
                               'Send \$0.01 to yourself',
                               style: TextStyle(fontSize: 18),
@@ -79,7 +83,8 @@ class _HomePageState extends State<HomePage> {
                               receivers: [
                                 PaymentRequestItem(
                                   currencyCode: 'USD',
-                                  destination: state.userProfile.publicProfile.handle,
+                                  destination:
+                                      state.userProfile.publicProfile.handle,
                                   sendAmount: 0.01,
                                 )
                               ],

@@ -8,24 +8,21 @@ part of 'payment_result.dart';
 
 PaymentResult _$PaymentResultFromJson(Map<String, dynamic> json) {
   return PaymentResult(
-    transactionId: json['transactionId'] as String,
-    note: json['note'] as String,
-    appAction: json['appAction'] as String,
-    time: json['time'] as int,
+    transactionId: json['transactionId'] as String?,
+    note: json['note'] as String?,
+    appAction: json['appAction'] as String?,
+    time: json['time'] as int?,
     type: _$enumDecodeNullable(_$PaymentTypeEnumMap, json['type']),
-    satoshiFees: (json['satoshiFees'] as num)?.toDouble(),
-    satoshiAmount: (json['satoshiAmount'] as num)?.toDouble(),
-    fiatExchangeRate: (json['fiatExchangeRate'] as num)?.toDouble(),
-    fiatCurrencyCode: json['fiatCurrencyCode'] as String,
-    participants: (json['participants'] as List)
-        ?.map((e) => e == null
-            ? null
-            : TransactionParticipant.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    attachments: (json['attachments'] as List)
-        ?.map((e) =>
-            e == null ? null : Attachment.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    satoshiFees: (json['satoshiFees'] as num?)?.toDouble(),
+    satoshiAmount: (json['satoshiAmount'] as num?)?.toDouble(),
+    fiatExchangeRate: (json['fiatExchangeRate'] as num?)?.toDouble(),
+    fiatCurrencyCode: json['fiatCurrencyCode'] as String?,
+    participants: (json['participants'] as List<dynamic>?)
+        ?.map((e) => TransactionParticipant.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    attachments: (json['attachments'] as List<dynamic>?)
+        ?.map((e) => Attachment.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
@@ -44,36 +41,41 @@ Map<String, dynamic> _$PaymentResultToJson(PaymentResult instance) =>
       'attachments': instance.attachments,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$PaymentTypeEnumMap = {

@@ -11,7 +11,8 @@ import 'package:pointycastle/signers/ecdsa_signer.dart';
 
 class AuthenticationHashSigner {
   static final SHA256Digest _sha256Digest = SHA256Digest();
-  static final ECDomainParameters _domainParams = ECDomainParameters('secp256k1');
+  static final ECDomainParameters _domainParams =
+      ECDomainParameters('secp256k1');
 
   final ECPrivateKey _ecPrivateKey;
   final ECPublicKey _ecPublicKey;
@@ -22,28 +23,36 @@ class AuthenticationHashSigner {
   }
 
   static AuthenticationHashSigner fromPrivateKey(String privateKeyHex) {
-    final ECPrivateKey privateKey =
-        ECPrivateKey(BigInt.parse(privateKeyHex, radix: 16), AuthenticationHashSigner._domainParams);
-    final ECPublicKey publicKey = ECPublicKey(_domainParams.G * privateKey.d, _domainParams);
+    final ECPrivateKey privateKey = ECPrivateKey(
+        BigInt.parse(privateKeyHex, radix: 16),
+        AuthenticationHashSigner._domainParams);
+    final ECPublicKey publicKey =
+        ECPublicKey(_domainParams.G * privateKey.d, _domainParams);
     return AuthenticationHashSigner(privateKey, publicKey);
   }
 
   String getPublicKey() {
-    return hex.encode(_ecPublicKey.Q.getEncoded());
+    return hex.encode(_ecPublicKey.Q!.getEncoded());
   }
 
   String sign(String hash) {
     final Uint8List decodedMessage = Uint8List.fromList(utf8.encode(hash));
     _sha256Digest.reset();
-    final Uint8List messageHash = Uint8List.fromList(_sha256Digest.process(decodedMessage));
+    final Uint8List messageHash =
+        Uint8List.fromList(_sha256Digest.process(decodedMessage));
 
-    final ECSignature signature = _toLowS(this._dsaSigner.generateSignature(messageHash) as ECSignature);
+    final ECSignature signature =
+        _toLowS(this._dsaSigner.generateSignature(messageHash) as ECSignature);
     return _toDER(signature);
   }
 
   ECSignature _toLowS(ECSignature signature) {
-    if (signature.s > BigInt.parse('7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0', radix: 16)) {
-      return ECSignature(signature.r, AuthenticationHashSigner._domainParams.n - signature.s);
+    if (signature.s >
+        BigInt.parse(
+            '7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0',
+            radix: 16)) {
+      return ECSignature(
+          signature.r, AuthenticationHashSigner._domainParams.n - signature.s);
     }
     return signature;
   }

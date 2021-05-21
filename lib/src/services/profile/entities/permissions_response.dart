@@ -10,10 +10,11 @@ class PermissionsResponse {
   final List<Permissions> items;
 
   PermissionsResponse({
-    this.items,
+    required this.items,
   });
 
-  factory PermissionsResponse.fromJson(Map<String, dynamic> json) => _$PermissionsResponseFromJson(json);
+  factory PermissionsResponse.fromJson(Map<String, dynamic> json) =>
+      _$PermissionsResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$PermissionsResponseToJson(this);
 

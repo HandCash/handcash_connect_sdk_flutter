@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'cloud_api_exception.dart';
 
@@ -9,12 +9,15 @@ part of 'cloud_api_exception.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$CloudApiExceptionTearOff {
   const _$CloudApiExceptionTearOff();
 
-// ignore: unused_element
   InvalidRequestError invalidRequest(
-      {String message,
+      {String? message,
       int statusCode = 400,
       Map<String, dynamic> info = const {}}) {
     return InvalidRequestError(
@@ -24,162 +27,166 @@ class _$CloudApiExceptionTearOff {
     );
   }
 
-// ignore: unused_element
-  UnauthenticatedError unauthenticated({String message, int statusCode = 401}) {
+  UnauthenticatedError unauthenticated(
+      {String? message, int statusCode = 401}) {
     return UnauthenticatedError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
   InvalidAuthenticationError invalidAuthentication(
-      {String message, int statusCode = 403}) {
+      {String? message, int statusCode = 403}) {
     return InvalidAuthenticationError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
-  ConflictError conflict({String message, int statusCode = 409}) {
+  ConflictError conflict({String? message, int statusCode = 409}) {
     return ConflictError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
-  ContentTooLargeError contentTooLarge({String message, int statusCode = 413}) {
+  ContentTooLargeError contentTooLarge(
+      {String? message, int statusCode = 413}) {
     return ContentTooLargeError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
-  DeprecatedError deprecated({String message, int statusCode = 410}) {
+  DeprecatedError deprecated({String? message, int statusCode = 410}) {
     return DeprecatedError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
   OutdatedAppVersionError outdatedAppVersion(
-      {String message, int statusCode = 450}) {
+      {String? message, int statusCode = 450}) {
     return OutdatedAppVersionError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
-  ServerError serverError({String message, int statusCode = 500}) {
+  ServerError serverError({String? message, int statusCode = 500}) {
     return ServerError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
   ExternalServiceNotAvailableError externalServiceNotAvailable(
-      {String message, int statusCode = 503}) {
+      {String? message, int statusCode = 503}) {
     return ExternalServiceNotAvailableError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-// ignore: unused_element
   NoInternetConnection noInternetConnection() {
     return const NoInternetConnection();
   }
 
-// ignore: unused_element
-  UnknownError unknownError({String message}) {
+  UnknownError unknownError({String? message}) {
     return UnknownError(
       message: message,
     );
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $CloudApiException = _$CloudApiExceptionTearOff();
 
+/// @nodoc
 mixin _$CloudApiException {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $CloudApiExceptionCopyWith<$Res> {
   factory $CloudApiExceptionCopyWith(
           CloudApiException value, $Res Function(CloudApiException) then) =
       _$CloudApiExceptionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CloudApiExceptionCopyWithImpl<$Res>
     implements $CloudApiExceptionCopyWith<$Res> {
   _$CloudApiExceptionCopyWithImpl(this._value, this._then);
@@ -189,13 +196,15 @@ class _$CloudApiExceptionCopyWithImpl<$Res>
   final $Res Function(CloudApiException) _then;
 }
 
+/// @nodoc
 abstract class $InvalidRequestErrorCopyWith<$Res> {
   factory $InvalidRequestErrorCopyWith(
           InvalidRequestError value, $Res Function(InvalidRequestError) then) =
       _$InvalidRequestErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode, Map<String, dynamic> info});
+  $Res call({String? message, int statusCode, Map<String, dynamic> info});
 }
 
+/// @nodoc
 class _$InvalidRequestErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $InvalidRequestErrorCopyWith<$Res> {
@@ -208,26 +217,35 @@ class _$InvalidRequestErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
-    Object info = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
+    Object? info = freezed,
   }) {
     return _then(InvalidRequestError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
-      info: info == freezed ? _value.info : info as Map<String, dynamic>,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      info: info == freezed
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 }
 
+/// @nodoc
+
 class _$InvalidRequestError implements InvalidRequestError {
   const _$InvalidRequestError(
-      {this.message, this.statusCode = 400, this.info = const {}})
-      : assert(statusCode != null),
-        assert(info != null);
+      {this.message, this.statusCode = 400, this.info = const {}});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 400)
   @override
   final int statusCode;
@@ -261,60 +279,53 @@ class _$InvalidRequestError implements InvalidRequestError {
       const DeepCollectionEquality().hash(statusCode) ^
       const DeepCollectionEquality().hash(info);
 
+  @JsonKey(ignore: true)
   @override
   $InvalidRequestErrorCopyWith<InvalidRequestError> get copyWith =>
       _$InvalidRequestErrorCopyWithImpl<InvalidRequestError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return invalidRequest(message, statusCode, info);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidRequest != null) {
       return invalidRequest(message, statusCode, info);
     }
@@ -323,52 +334,41 @@ class _$InvalidRequestError implements InvalidRequestError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return invalidRequest(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidRequest != null) {
       return invalidRequest(this);
     }
@@ -378,23 +378,27 @@ class _$InvalidRequestError implements InvalidRequestError {
 
 abstract class InvalidRequestError implements CloudApiException {
   const factory InvalidRequestError(
-      {String message,
+      {String? message,
       int statusCode,
       Map<String, dynamic> info}) = _$InvalidRequestError;
 
-  String get message;
-  int get statusCode;
-  Map<String, dynamic> get info;
-  $InvalidRequestErrorCopyWith<InvalidRequestError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  Map<String, dynamic> get info => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidRequestErrorCopyWith<InvalidRequestError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $UnauthenticatedErrorCopyWith<$Res> {
   factory $UnauthenticatedErrorCopyWith(UnauthenticatedError value,
           $Res Function(UnauthenticatedError) then) =
       _$UnauthenticatedErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$UnauthenticatedErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $UnauthenticatedErrorCopyWith<$Res> {
@@ -407,22 +411,29 @@ class _$UnauthenticatedErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(UnauthenticatedError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$UnauthenticatedError implements UnauthenticatedError {
-  const _$UnauthenticatedError({this.message, this.statusCode = 401})
-      : assert(statusCode != null);
+  const _$UnauthenticatedError({this.message, this.statusCode = 401});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 401)
   @override
   final int statusCode;
@@ -450,6 +461,7 @@ class _$UnauthenticatedError implements UnauthenticatedError {
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $UnauthenticatedErrorCopyWith<UnauthenticatedError> get copyWith =>
       _$UnauthenticatedErrorCopyWithImpl<UnauthenticatedError>(
@@ -457,54 +469,46 @@ class _$UnauthenticatedError implements UnauthenticatedError {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return unauthenticated(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unauthenticated != null) {
       return unauthenticated(message, statusCode);
     }
@@ -513,52 +517,41 @@ class _$UnauthenticatedError implements UnauthenticatedError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return unauthenticated(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unauthenticated != null) {
       return unauthenticated(this);
     }
@@ -567,21 +560,25 @@ class _$UnauthenticatedError implements UnauthenticatedError {
 }
 
 abstract class UnauthenticatedError implements CloudApiException {
-  const factory UnauthenticatedError({String message, int statusCode}) =
+  const factory UnauthenticatedError({String? message, int statusCode}) =
       _$UnauthenticatedError;
 
-  String get message;
-  int get statusCode;
-  $UnauthenticatedErrorCopyWith<UnauthenticatedError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UnauthenticatedErrorCopyWith<UnauthenticatedError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $InvalidAuthenticationErrorCopyWith<$Res> {
   factory $InvalidAuthenticationErrorCopyWith(InvalidAuthenticationError value,
           $Res Function(InvalidAuthenticationError) then) =
       _$InvalidAuthenticationErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$InvalidAuthenticationErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $InvalidAuthenticationErrorCopyWith<$Res> {
@@ -595,22 +592,29 @@ class _$InvalidAuthenticationErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(InvalidAuthenticationError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$InvalidAuthenticationError implements InvalidAuthenticationError {
-  const _$InvalidAuthenticationError({this.message, this.statusCode = 403})
-      : assert(statusCode != null);
+  const _$InvalidAuthenticationError({this.message, this.statusCode = 403});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 403)
   @override
   final int statusCode;
@@ -638,6 +642,7 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $InvalidAuthenticationErrorCopyWith<InvalidAuthenticationError>
       get copyWith =>
@@ -646,54 +651,46 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return invalidAuthentication(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidAuthentication != null) {
       return invalidAuthentication(message, statusCode);
     }
@@ -702,52 +699,41 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return invalidAuthentication(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidAuthentication != null) {
       return invalidAuthentication(this);
     }
@@ -756,21 +742,25 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
 }
 
 abstract class InvalidAuthenticationError implements CloudApiException {
-  const factory InvalidAuthenticationError({String message, int statusCode}) =
+  const factory InvalidAuthenticationError({String? message, int statusCode}) =
       _$InvalidAuthenticationError;
 
-  String get message;
-  int get statusCode;
-  $InvalidAuthenticationErrorCopyWith<InvalidAuthenticationError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InvalidAuthenticationErrorCopyWith<InvalidAuthenticationError>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ConflictErrorCopyWith<$Res> {
   factory $ConflictErrorCopyWith(
           ConflictError value, $Res Function(ConflictError) then) =
       _$ConflictErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$ConflictErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $ConflictErrorCopyWith<$Res> {
@@ -783,22 +773,29 @@ class _$ConflictErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(ConflictError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ConflictError implements ConflictError {
-  const _$ConflictError({this.message, this.statusCode = 409})
-      : assert(statusCode != null);
+  const _$ConflictError({this.message, this.statusCode = 409});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 409)
   @override
   final int statusCode;
@@ -826,60 +823,53 @@ class _$ConflictError implements ConflictError {
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $ConflictErrorCopyWith<ConflictError> get copyWith =>
       _$ConflictErrorCopyWithImpl<ConflictError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return conflict(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (conflict != null) {
       return conflict(message, statusCode);
     }
@@ -888,52 +878,41 @@ class _$ConflictError implements ConflictError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return conflict(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (conflict != null) {
       return conflict(this);
     }
@@ -942,21 +921,25 @@ class _$ConflictError implements ConflictError {
 }
 
 abstract class ConflictError implements CloudApiException {
-  const factory ConflictError({String message, int statusCode}) =
+  const factory ConflictError({String? message, int statusCode}) =
       _$ConflictError;
 
-  String get message;
-  int get statusCode;
-  $ConflictErrorCopyWith<ConflictError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ConflictErrorCopyWith<ConflictError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ContentTooLargeErrorCopyWith<$Res> {
   factory $ContentTooLargeErrorCopyWith(ContentTooLargeError value,
           $Res Function(ContentTooLargeError) then) =
       _$ContentTooLargeErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$ContentTooLargeErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $ContentTooLargeErrorCopyWith<$Res> {
@@ -969,22 +952,29 @@ class _$ContentTooLargeErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(ContentTooLargeError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ContentTooLargeError implements ContentTooLargeError {
-  const _$ContentTooLargeError({this.message, this.statusCode = 413})
-      : assert(statusCode != null);
+  const _$ContentTooLargeError({this.message, this.statusCode = 413});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 413)
   @override
   final int statusCode;
@@ -1012,6 +1002,7 @@ class _$ContentTooLargeError implements ContentTooLargeError {
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $ContentTooLargeErrorCopyWith<ContentTooLargeError> get copyWith =>
       _$ContentTooLargeErrorCopyWithImpl<ContentTooLargeError>(
@@ -1019,54 +1010,46 @@ class _$ContentTooLargeError implements ContentTooLargeError {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return contentTooLarge(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (contentTooLarge != null) {
       return contentTooLarge(message, statusCode);
     }
@@ -1075,52 +1058,41 @@ class _$ContentTooLargeError implements ContentTooLargeError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return contentTooLarge(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (contentTooLarge != null) {
       return contentTooLarge(this);
     }
@@ -1129,21 +1101,25 @@ class _$ContentTooLargeError implements ContentTooLargeError {
 }
 
 abstract class ContentTooLargeError implements CloudApiException {
-  const factory ContentTooLargeError({String message, int statusCode}) =
+  const factory ContentTooLargeError({String? message, int statusCode}) =
       _$ContentTooLargeError;
 
-  String get message;
-  int get statusCode;
-  $ContentTooLargeErrorCopyWith<ContentTooLargeError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ContentTooLargeErrorCopyWith<ContentTooLargeError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $DeprecatedErrorCopyWith<$Res> {
   factory $DeprecatedErrorCopyWith(
           DeprecatedError value, $Res Function(DeprecatedError) then) =
       _$DeprecatedErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$DeprecatedErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $DeprecatedErrorCopyWith<$Res> {
@@ -1156,22 +1132,29 @@ class _$DeprecatedErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(DeprecatedError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$DeprecatedError implements DeprecatedError {
-  const _$DeprecatedError({this.message, this.statusCode = 410})
-      : assert(statusCode != null);
+  const _$DeprecatedError({this.message, this.statusCode = 410});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 410)
   @override
   final int statusCode;
@@ -1199,60 +1182,53 @@ class _$DeprecatedError implements DeprecatedError {
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $DeprecatedErrorCopyWith<DeprecatedError> get copyWith =>
       _$DeprecatedErrorCopyWithImpl<DeprecatedError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return deprecated(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deprecated != null) {
       return deprecated(message, statusCode);
     }
@@ -1261,52 +1237,41 @@ class _$DeprecatedError implements DeprecatedError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return deprecated(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deprecated != null) {
       return deprecated(this);
     }
@@ -1315,21 +1280,25 @@ class _$DeprecatedError implements DeprecatedError {
 }
 
 abstract class DeprecatedError implements CloudApiException {
-  const factory DeprecatedError({String message, int statusCode}) =
+  const factory DeprecatedError({String? message, int statusCode}) =
       _$DeprecatedError;
 
-  String get message;
-  int get statusCode;
-  $DeprecatedErrorCopyWith<DeprecatedError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DeprecatedErrorCopyWith<DeprecatedError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $OutdatedAppVersionErrorCopyWith<$Res> {
   factory $OutdatedAppVersionErrorCopyWith(OutdatedAppVersionError value,
           $Res Function(OutdatedAppVersionError) then) =
       _$OutdatedAppVersionErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$OutdatedAppVersionErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $OutdatedAppVersionErrorCopyWith<$Res> {
@@ -1342,22 +1311,29 @@ class _$OutdatedAppVersionErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(OutdatedAppVersionError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$OutdatedAppVersionError implements OutdatedAppVersionError {
-  const _$OutdatedAppVersionError({this.message, this.statusCode = 450})
-      : assert(statusCode != null);
+  const _$OutdatedAppVersionError({this.message, this.statusCode = 450});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 450)
   @override
   final int statusCode;
@@ -1385,6 +1361,7 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $OutdatedAppVersionErrorCopyWith<OutdatedAppVersionError> get copyWith =>
       _$OutdatedAppVersionErrorCopyWithImpl<OutdatedAppVersionError>(
@@ -1392,54 +1369,46 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return outdatedAppVersion(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (outdatedAppVersion != null) {
       return outdatedAppVersion(message, statusCode);
     }
@@ -1448,52 +1417,41 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return outdatedAppVersion(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (outdatedAppVersion != null) {
       return outdatedAppVersion(this);
     }
@@ -1502,21 +1460,25 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
 }
 
 abstract class OutdatedAppVersionError implements CloudApiException {
-  const factory OutdatedAppVersionError({String message, int statusCode}) =
+  const factory OutdatedAppVersionError({String? message, int statusCode}) =
       _$OutdatedAppVersionError;
 
-  String get message;
-  int get statusCode;
-  $OutdatedAppVersionErrorCopyWith<OutdatedAppVersionError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OutdatedAppVersionErrorCopyWith<OutdatedAppVersionError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ServerErrorCopyWith<$Res> {
   factory $ServerErrorCopyWith(
           ServerError value, $Res Function(ServerError) then) =
       _$ServerErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$ServerErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $ServerErrorCopyWith<$Res> {
@@ -1529,22 +1491,29 @@ class _$ServerErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(ServerError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ServerError implements ServerError {
-  const _$ServerError({this.message, this.statusCode = 500})
-      : assert(statusCode != null);
+  const _$ServerError({this.message, this.statusCode = 500});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 500)
   @override
   final int statusCode;
@@ -1572,60 +1541,53 @@ class _$ServerError implements ServerError {
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $ServerErrorCopyWith<ServerError> get copyWith =>
       _$ServerErrorCopyWithImpl<ServerError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return serverError(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serverError != null) {
       return serverError(message, statusCode);
     }
@@ -1634,52 +1596,41 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return serverError(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serverError != null) {
       return serverError(this);
     }
@@ -1688,21 +1639,25 @@ class _$ServerError implements ServerError {
 }
 
 abstract class ServerError implements CloudApiException {
-  const factory ServerError({String message, int statusCode}) = _$ServerError;
+  const factory ServerError({String? message, int statusCode}) = _$ServerError;
 
-  String get message;
-  int get statusCode;
-  $ServerErrorCopyWith<ServerError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ServerErrorCopyWith<ServerError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $ExternalServiceNotAvailableErrorCopyWith<$Res> {
   factory $ExternalServiceNotAvailableErrorCopyWith(
           ExternalServiceNotAvailableError value,
           $Res Function(ExternalServiceNotAvailableError) then) =
       _$ExternalServiceNotAvailableErrorCopyWithImpl<$Res>;
-  $Res call({String message, int statusCode});
+  $Res call({String? message, int statusCode});
 }
 
+/// @nodoc
 class _$ExternalServiceNotAvailableErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $ExternalServiceNotAvailableErrorCopyWith<$Res> {
@@ -1717,24 +1672,31 @@ class _$ExternalServiceNotAvailableErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
-    Object statusCode = freezed,
+    Object? message = freezed,
+    Object? statusCode = freezed,
   }) {
     return _then(ExternalServiceNotAvailableError(
-      message: message == freezed ? _value.message : message as String,
-      statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: statusCode == freezed
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
+/// @nodoc
+
 class _$ExternalServiceNotAvailableError
     implements ExternalServiceNotAvailableError {
   const _$ExternalServiceNotAvailableError(
-      {this.message, this.statusCode = 503})
-      : assert(statusCode != null);
+      {this.message, this.statusCode = 503});
 
   @override
-  final String message;
+  final String? message;
   @JsonKey(defaultValue: 503)
   @override
   final int statusCode;
@@ -1762,6 +1724,7 @@ class _$ExternalServiceNotAvailableError
       const DeepCollectionEquality().hash(message) ^
       const DeepCollectionEquality().hash(statusCode);
 
+  @JsonKey(ignore: true)
   @override
   $ExternalServiceNotAvailableErrorCopyWith<ExternalServiceNotAvailableError>
       get copyWith => _$ExternalServiceNotAvailableErrorCopyWithImpl<
@@ -1769,54 +1732,46 @@ class _$ExternalServiceNotAvailableError
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return externalServiceNotAvailable(message, statusCode);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (externalServiceNotAvailable != null) {
       return externalServiceNotAvailable(message, statusCode);
     }
@@ -1825,52 +1780,41 @@ class _$ExternalServiceNotAvailableError
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return externalServiceNotAvailable(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (externalServiceNotAvailable != null) {
       return externalServiceNotAvailable(this);
     }
@@ -1880,20 +1824,23 @@ class _$ExternalServiceNotAvailableError
 
 abstract class ExternalServiceNotAvailableError implements CloudApiException {
   const factory ExternalServiceNotAvailableError(
-      {String message, int statusCode}) = _$ExternalServiceNotAvailableError;
+      {String? message, int statusCode}) = _$ExternalServiceNotAvailableError;
 
-  String get message;
-  int get statusCode;
+  String? get message => throw _privateConstructorUsedError;
+  int get statusCode => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
   $ExternalServiceNotAvailableErrorCopyWith<ExternalServiceNotAvailableError>
-      get copyWith;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $NoInternetConnectionCopyWith<$Res> {
   factory $NoInternetConnectionCopyWith(NoInternetConnection value,
           $Res Function(NoInternetConnection) then) =
       _$NoInternetConnectionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$NoInternetConnectionCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $NoInternetConnectionCopyWith<$Res> {
@@ -1904,6 +1851,8 @@ class _$NoInternetConnectionCopyWithImpl<$Res>
   @override
   NoInternetConnection get _value => super._value as NoInternetConnection;
 }
+
+/// @nodoc
 
 class _$NoInternetConnection implements NoInternetConnection {
   const _$NoInternetConnection();
@@ -1923,54 +1872,46 @@ class _$NoInternetConnection implements NoInternetConnection {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return noInternetConnection();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (noInternetConnection != null) {
       return noInternetConnection();
     }
@@ -1979,52 +1920,41 @@ class _$NoInternetConnection implements NoInternetConnection {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return noInternetConnection(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (noInternetConnection != null) {
       return noInternetConnection(this);
     }
@@ -2036,13 +1966,15 @@ abstract class NoInternetConnection implements CloudApiException {
   const factory NoInternetConnection() = _$NoInternetConnection;
 }
 
+/// @nodoc
 abstract class $UnknownErrorCopyWith<$Res> {
   factory $UnknownErrorCopyWith(
           UnknownError value, $Res Function(UnknownError) then) =
       _$UnknownErrorCopyWithImpl<$Res>;
-  $Res call({String message});
+  $Res call({String? message});
 }
 
+/// @nodoc
 class _$UnknownErrorCopyWithImpl<$Res>
     extends _$CloudApiExceptionCopyWithImpl<$Res>
     implements $UnknownErrorCopyWith<$Res> {
@@ -2055,19 +1987,24 @@ class _$UnknownErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
+    Object? message = freezed,
   }) {
     return _then(UnknownError(
-      message: message == freezed ? _value.message : message as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
+
+/// @nodoc
 
 class _$UnknownError implements UnknownError {
   const _$UnknownError({this.message});
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
@@ -2086,60 +2023,53 @@ class _$UnknownError implements UnknownError {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
 
+  @JsonKey(ignore: true)
   @override
   $UnknownErrorCopyWith<UnknownError> get copyWith =>
       _$UnknownErrorCopyWithImpl<UnknownError>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required
-        Result invalidRequest(
-            String message, int statusCode, Map<String, dynamic> info),
-    @required Result unauthenticated(String message, int statusCode),
-    @required Result invalidAuthentication(String message, int statusCode),
-    @required Result conflict(String message, int statusCode),
-    @required Result contentTooLarge(String message, int statusCode),
-    @required Result deprecated(String message, int statusCode),
-    @required Result outdatedAppVersion(String message, int statusCode),
-    @required Result serverError(String message, int statusCode),
-    @required
-        Result externalServiceNotAvailable(String message, int statusCode),
-    @required Result noInternetConnection(),
-    @required Result unknownError(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)
+        invalidRequest,
+    required TResult Function(String? message, int statusCode) unauthenticated,
+    required TResult Function(String? message, int statusCode)
+        invalidAuthentication,
+    required TResult Function(String? message, int statusCode) conflict,
+    required TResult Function(String? message, int statusCode) contentTooLarge,
+    required TResult Function(String? message, int statusCode) deprecated,
+    required TResult Function(String? message, int statusCode)
+        outdatedAppVersion,
+    required TResult Function(String? message, int statusCode) serverError,
+    required TResult Function(String? message, int statusCode)
+        externalServiceNotAvailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(String? message) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return unknownError(message);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidRequest(
-        String message, int statusCode, Map<String, dynamic> info),
-    Result unauthenticated(String message, int statusCode),
-    Result invalidAuthentication(String message, int statusCode),
-    Result conflict(String message, int statusCode),
-    Result contentTooLarge(String message, int statusCode),
-    Result deprecated(String message, int statusCode),
-    Result outdatedAppVersion(String message, int statusCode),
-    Result serverError(String message, int statusCode),
-    Result externalServiceNotAvailable(String message, int statusCode),
-    Result noInternetConnection(),
-    Result unknownError(String message),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String? message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String? message, int statusCode)? unauthenticated,
+    TResult Function(String? message, int statusCode)? invalidAuthentication,
+    TResult Function(String? message, int statusCode)? conflict,
+    TResult Function(String? message, int statusCode)? contentTooLarge,
+    TResult Function(String? message, int statusCode)? deprecated,
+    TResult Function(String? message, int statusCode)? outdatedAppVersion,
+    TResult Function(String? message, int statusCode)? serverError,
+    TResult Function(String? message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String? message)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unknownError != null) {
       return unknownError(message);
     }
@@ -2148,52 +2078,41 @@ class _$UnknownError implements UnknownError {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidRequest(InvalidRequestError value),
-    @required Result unauthenticated(UnauthenticatedError value),
-    @required Result invalidAuthentication(InvalidAuthenticationError value),
-    @required Result conflict(ConflictError value),
-    @required Result contentTooLarge(ContentTooLargeError value),
-    @required Result deprecated(DeprecatedError value),
-    @required Result outdatedAppVersion(OutdatedAppVersionError value),
-    @required Result serverError(ServerError value),
-    @required
-        Result externalServiceNotAvailable(
-            ExternalServiceNotAvailableError value),
-    @required Result noInternetConnection(NoInternetConnection value),
-    @required Result unknownError(UnknownError value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidRequestError value) invalidRequest,
+    required TResult Function(UnauthenticatedError value) unauthenticated,
+    required TResult Function(InvalidAuthenticationError value)
+        invalidAuthentication,
+    required TResult Function(ConflictError value) conflict,
+    required TResult Function(ContentTooLargeError value) contentTooLarge,
+    required TResult Function(DeprecatedError value) deprecated,
+    required TResult Function(OutdatedAppVersionError value) outdatedAppVersion,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(ExternalServiceNotAvailableError value)
+        externalServiceNotAvailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(UnknownError value) unknownError,
   }) {
-    assert(invalidRequest != null);
-    assert(unauthenticated != null);
-    assert(invalidAuthentication != null);
-    assert(conflict != null);
-    assert(contentTooLarge != null);
-    assert(deprecated != null);
-    assert(outdatedAppVersion != null);
-    assert(serverError != null);
-    assert(externalServiceNotAvailable != null);
-    assert(noInternetConnection != null);
-    assert(unknownError != null);
     return unknownError(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidRequest(InvalidRequestError value),
-    Result unauthenticated(UnauthenticatedError value),
-    Result invalidAuthentication(InvalidAuthenticationError value),
-    Result conflict(ConflictError value),
-    Result contentTooLarge(ContentTooLargeError value),
-    Result deprecated(DeprecatedError value),
-    Result outdatedAppVersion(OutdatedAppVersionError value),
-    Result serverError(ServerError value),
-    Result externalServiceNotAvailable(ExternalServiceNotAvailableError value),
-    Result noInternetConnection(NoInternetConnection value),
-    Result unknownError(UnknownError value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (unknownError != null) {
       return unknownError(this);
     }
@@ -2202,8 +2121,10 @@ class _$UnknownError implements UnknownError {
 }
 
 abstract class UnknownError implements CloudApiException {
-  const factory UnknownError({String message}) = _$UnknownError;
+  const factory UnknownError({String? message}) = _$UnknownError;
 
-  String get message;
-  $UnknownErrorCopyWith<UnknownError> get copyWith;
+  String? get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UnknownErrorCopyWith<UnknownError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -4,11 +4,12 @@ part 'handle_request.g.dart';
 
 @JsonSerializable()
 class HandleRequest {
-  final List<String> aliases;
+  final List<String>? aliases;
 
   HandleRequest({this.aliases});
 
-  factory HandleRequest.fromJson(Map<String, dynamic> json) => _$HandleRequestFromJson(json);
+  factory HandleRequest.fromJson(Map<String, dynamic> json) =>
+      _$HandleRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$HandleRequestToJson(this);
 }

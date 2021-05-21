@@ -4,11 +4,12 @@ part 'payment_request_item.g.dart';
 
 @JsonSerializable()
 class PaymentRequestItem {
-  /// Receiver handler without $ or paymail 
-  final String destination;
+  /// Receiver handler without $ or paymail
+  final String? destination;
+
   /// CurrencyCode - ISO4218: "USD", "EUR", ...
-  final String currencyCode;
-  final double sendAmount;
+  final String? currencyCode;
+  final double? sendAmount;
 
   PaymentRequestItem({
     this.destination,
@@ -16,9 +17,8 @@ class PaymentRequestItem {
     this.sendAmount,
   });
 
-  factory PaymentRequestItem.fromJson(Map<String, dynamic> json) => _$PaymentRequestItemFromJson(json);
+  factory PaymentRequestItem.fromJson(Map<String, dynamic> json) =>
+      _$PaymentRequestItemFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentRequestItemToJson(this);
-
-
 }

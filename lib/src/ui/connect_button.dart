@@ -3,7 +3,6 @@ import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ConnectButton extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,13 +33,17 @@ class ConnectButton extends StatelessWidget {
                 height: 20,
                 width: 20,
                 child: Image(
-                  image: AssetImage('assets/connect_icon_white.png', package: 'handcash_connect_sdk'),
+                  image: AssetImage('assets/connect_icon_white.png',
+                      package: 'handcash_connect_sdk'),
                 ),
               ),
               SizedBox(width: 16),
               Text(
                 'Connect with HandCash',
-                style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.white, letterSpacing: 0.6),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: Colors.white, letterSpacing: 0.6),
                 overflow: TextOverflow.ellipsis,
               ),
             ],
