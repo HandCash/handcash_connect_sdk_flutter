@@ -31,6 +31,14 @@ void main() {
     expect(publicProfiles!.length > 0, true);
   });
 
+  test('should get public user profiles by handle with two handles', () async {
+    final publicProfiles = await (cloudAccount.profile
+        .getPublicProfilesByHandle(['tester', 'rjseibane']));
+
+    expect(publicProfiles, isA<List<UserPublicProfile>>());
+    expect(publicProfiles!.length > 1, true);
+  });
+
   test('should get current user permissions', () async {
     final userPermissions = await (cloudAccount.profile.getPermissions());
 
