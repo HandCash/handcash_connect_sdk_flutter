@@ -25,7 +25,7 @@ class _$HandCashProfileService extends HandCashProfileService {
   Future<Response<UserPublicResponse>> getPublicProfilesByHandleRequest(
       List<String> aliases) {
     final $url = '/v1/connect/profile/publicUserProfiles';
-    final $params = <String, dynamic>{'aliases': aliases};
+    final $params = <String, dynamic>{'aliases[]': aliases};
     final $request = Request('GET', $url, client.baseUrl, parameters: $params);
     return client.send<UserPublicResponse, UserPublicResponse>($request);
   }

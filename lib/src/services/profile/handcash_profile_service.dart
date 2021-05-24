@@ -16,7 +16,7 @@ abstract class HandCashProfileService extends ChopperService {
 
   @Get(path: '/publicUserProfiles')
   Future<Response<UserPublicResponse>> getPublicProfilesByHandleRequest(
-      @Query('aliases') List<String> aliases);
+      @Query('aliases[]') List<String> aliases);
 
   @Get(path: '/friends')
   Future<Response<UserPublicResponse>> getUserFriendsRequest();
