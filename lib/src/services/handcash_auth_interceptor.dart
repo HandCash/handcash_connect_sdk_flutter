@@ -50,11 +50,26 @@ class HandCashAuthInterceptor extends RequestInterceptor {
         (request.parameters.isNotEmpty ? '?' : '') +
         request.parameters.entries
             .where((element) => element.value != null)
-            .map((e) =>
-                '${e.key}=${(e.value is List ? e.value : Uri.encodeQueryComponent(e.value.toString()))}')
+            .map(_formatComponent)
             .join('&');
     final String bodyAsString =
         request.multipart ? '' : '\n${request.body?.toString() ?? ''}';
     return '$method\n$url\n$timestamp$bodyAsString';
+  }
+
+  String _formatComponent(MapEntry<String, dynamic> e) {
+    if (e.value is List) {
+      final List<dynamic> currentList = e.value;
+
+      final String component = currentList.fold(
+        '',
+        (String previousItem, currentItem) =>
+            '$previousItem${previousItem.isEmpty ? "" : "&"}${e.key}=${currentItem.toString()}',
+      );
+
+      return Uri.encodeFull(component);
+    }
+
+    return '${e.key}=${(Uri.encodeQueryComponent(e.value.toString()))}';
   }
 }
