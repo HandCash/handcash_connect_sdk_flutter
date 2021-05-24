@@ -15,9 +15,9 @@ class ServiceFactory {
   final String authToken;
   final String baseApiEndpoint;
 
-  ChopperClient client;
+  late ChopperClient client;
 
-  ServiceFactory({this.authToken, this.baseApiEndpoint}) {
+  ServiceFactory({required this.authToken, required this.baseApiEndpoint}) {
     client = ChopperClient(
       baseUrl: baseApiEndpoint,
       services: [
@@ -39,7 +39,9 @@ class ServiceFactory {
     );
   }
 
-  HandCashWalletService getWalletService() => client.getService<HandCashWalletService>();
+  HandCashWalletService getWalletService() =>
+      client.getService<HandCashWalletService>();
 
-  HandCashProfileService getProfileService() => client.getService<HandCashProfileService>();
+  HandCashProfileService getProfileService() =>
+      client.getService<HandCashProfileService>();
 }

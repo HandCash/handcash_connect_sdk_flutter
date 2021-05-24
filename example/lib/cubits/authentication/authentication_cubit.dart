@@ -10,7 +10,8 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
   final HandCashAccountCubit handCashAccountCubit;
   final PaymentCubit paymentCubit;
 
-  AuthenticationCubit(this.handCashAccountCubit, this.paymentCubit) : super(AuthenticationInitial());
+  AuthenticationCubit(this.handCashAccountCubit, this.paymentCubit)
+      : super(AuthenticationInitial());
 
   void onGetAuthToken(String authToken) {
     final account = HandCashConnect.getAccountFromAuthToken(authToken);

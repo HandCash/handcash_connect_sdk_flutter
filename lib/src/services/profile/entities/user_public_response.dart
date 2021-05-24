@@ -9,10 +9,11 @@ class UserPublicResponse {
   final List<UserPublicProfile> items;
 
   UserPublicResponse({
-    this.items,
+    required this.items,
   });
 
-  factory UserPublicResponse.fromJson(Map<String, dynamic> json) => _$UserPublicResponseFromJson(json);
+  factory UserPublicResponse.fromJson(Map<String, dynamic> json) =>
+      _$UserPublicResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserPublicResponseToJson(this);
 

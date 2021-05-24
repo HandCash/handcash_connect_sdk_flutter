@@ -8,13 +8,11 @@ part of 'payment_parameters.dart';
 
 PaymentParameters _$PaymentParametersFromJson(Map<String, dynamic> json) {
   return PaymentParameters(
-    description: json['description'] as String,
-    appAction: json['appAction'] as String,
-    receivers: (json['receivers'] as List)
-        ?.map((e) => e == null
-            ? null
-            : PaymentRequestItem.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    description: json['description'] as String?,
+    appAction: json['appAction'] as String?,
+    receivers: (json['receivers'] as List<dynamic>?)
+        ?.map((e) => PaymentRequestItem.fromJson(e as Map<String, dynamic>))
+        .toList(),
     attachment: json['attachment'] == null
         ? null
         : Attachment.fromJson(json['attachment'] as Map<String, dynamic>),

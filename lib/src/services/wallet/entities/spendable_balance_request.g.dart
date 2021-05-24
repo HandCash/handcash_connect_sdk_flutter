@@ -9,7 +9,7 @@ part of 'spendable_balance_request.dart';
 SpendableBalanceRequest _$SpendableBalanceRequestFromJson(
     Map<String, dynamic> json) {
   return SpendableBalanceRequest(
-    currencyCode: json['currencyCode'] as String,
+    currencyCode: json['currencyCode'] as String?,
   );
 }
 

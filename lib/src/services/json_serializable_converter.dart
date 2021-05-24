@@ -28,12 +28,13 @@ class JsonSerializableConverter extends JsonConverter {
     return jsonFactory(values);
   }
 
-  List<T> _decodeList<T>(List values) => values.where((v) => v != null).map<T>((v) => _decode<T>(v)).toList();
+  List<T?> _decodeList<T>(List values) =>
+      values.where((v) => v != null).map<T?>((v) => _decode<T>(v)).toList();
 
   dynamic _decode<T>(entity) {
-    if (entity is Iterable) return _decodeList<T>(entity);
+    if (entity is Iterable) return _decodeList<T>(entity as List<dynamic>);
 
-    if (entity is Map) return _decodeMap<T>(entity);
+    if (entity is Map) return _decodeMap<T>(entity as Map<String, dynamic>);
 
     return entity;
   }

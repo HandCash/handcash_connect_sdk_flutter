@@ -1,5 +1,3 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 part of 'handcash_profile_service.dart';
 
 // **************************************************************************
@@ -8,7 +6,7 @@ part of 'handcash_profile_service.dart';
 
 // ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations
 class _$HandCashProfileService extends HandCashProfileService {
-  _$HandCashProfileService([ChopperClient client]) {
+  _$HandCashProfileService([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }
@@ -25,10 +23,10 @@ class _$HandCashProfileService extends HandCashProfileService {
 
   @override
   Future<Response<UserPublicResponse>> getPublicProfilesByHandleRequest(
-      HandleRequest aliases) {
+      List<String> aliases) {
     final $url = '/v1/connect/profile/publicUserProfiles';
-    final $body = aliases;
-    final $request = Request('GET', $url, client.baseUrl, body: $body);
+    final $params = <String, dynamic>{'aliases[]': aliases};
+    final $request = Request('GET', $url, client.baseUrl, parameters: $params);
     return client.send<UserPublicResponse, UserPublicResponse>($request);
   }
 
