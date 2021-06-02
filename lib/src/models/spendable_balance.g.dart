@@ -9,8 +9,8 @@ part of 'spendable_balance.dart';
 SpendableBalance _$SpendableBalanceFromJson(Map<String, dynamic> json) {
   return SpendableBalance(
     spendableSatoshiBalance:
-        (json['spendableSatoshiBalance'] as num)?.toDouble(),
-    spendableFiatBalance: (json['spendableFiatBalance'] as num)?.toDouble(),
+        (json['spendableSatoshiBalance'] as num).toDouble(),
+    spendableFiatBalance: (json['spendableFiatBalance'] as num).toDouble(),
     currencyCode: json['currencyCode'] as String,
   );
 }

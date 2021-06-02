@@ -7,13 +7,15 @@ part 'permissions_response.g.dart';
 
 @JsonSerializable()
 class PermissionsResponse {
+  @JsonKey(unknownEnumValue: Permissions.UNKNOWN_PERMISSION_UPGRADED_REQUIRED)
   final List<Permissions> items;
 
   PermissionsResponse({
-    this.items,
+    required this.items,
   });
 
-  factory PermissionsResponse.fromJson(Map<String, dynamic> json) => _$PermissionsResponseFromJson(json);
+  factory PermissionsResponse.fromJson(Map<String, dynamic> json) =>
+      _$PermissionsResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$PermissionsResponseToJson(this);
 

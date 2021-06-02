@@ -24,7 +24,8 @@ void main() {
     }
   });
 
-  test('return <CloudApiException.invalidAuthentication> if error code is 403', () {
+  test('return <CloudApiException.invalidAuthentication> if error code is 403',
+      () {
     try {
       final response = Response(http.Response("{}", 403), "{}");
       errorConverter.convertError(response);
@@ -60,7 +61,8 @@ void main() {
     }
   });
 
-  test('return <CloudApiException.outdatedAppVersion> if error code is 450', () {
+  test('return <CloudApiException.outdatedAppVersion> if error code is 450',
+      () {
     try {
       final response = Response(http.Response("{}", 450), "{}");
       errorConverter.convertError(response);
@@ -78,7 +80,9 @@ void main() {
     }
   });
 
-  test('return <CloudApiException.externalServiceNotAvailable> if error code is 503', () {
+  test(
+      'return <CloudApiException.externalServiceNotAvailable> if error code is 503',
+      () {
     try {
       final response = Response(http.Response("{}", 503), "{}");
       errorConverter.convertError(response);
@@ -87,7 +91,9 @@ void main() {
     }
   });
 
-  test('return <CloudApiException.unknownError> if error code is not one of above', () {
+  test(
+      'return <CloudApiException.unknownError> if error code is not one of above',
+      () {
     try {
       final response = Response(http.Response("{}", 540), "{}");
       errorConverter.convertError(response);

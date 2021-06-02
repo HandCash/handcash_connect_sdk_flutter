@@ -24,53 +24,54 @@ class PaymentResult {
   final List<Attachment> attachments;
 
   PaymentResult({
-    this.transactionId,
-    this.note,
-    this.appAction,
-    this.time,
-    this.type,
-    this.satoshiFees,
-    this.satoshiAmount,
-    this.fiatExchangeRate,
-    this.fiatCurrencyCode,
-    this.participants,
-    this.attachments,
+    required this.transactionId,
+    required this.note,
+    required this.appAction,
+    required this.time,
+    required this.type,
+    required this.satoshiFees,
+    required this.satoshiAmount,
+    required this.fiatExchangeRate,
+    required this.fiatCurrencyCode,
+    required this.participants,
+    required this.attachments,
   });
 
-  factory PaymentResult.fromJson(Map<String, dynamic> json) => _$PaymentResultFromJson(json);
+  factory PaymentResult.fromJson(Map<String, dynamic> json) =>
+      _$PaymentResultFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentResultToJson(this);
 
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-  
+
     return o is PaymentResult &&
-      o.transactionId == transactionId &&
-      o.note == note &&
-      o.appAction == appAction &&
-      o.time == time &&
-      o.type == type &&
-      o.satoshiFees == satoshiFees &&
-      o.satoshiAmount == satoshiAmount &&
-      o.fiatExchangeRate == fiatExchangeRate &&
-      o.fiatCurrencyCode == fiatCurrencyCode &&
-      listEquals(o.participants, participants) &&
-      listEquals(o.attachments, attachments);
+        o.transactionId == transactionId &&
+        o.note == note &&
+        o.appAction == appAction &&
+        o.time == time &&
+        o.type == type &&
+        o.satoshiFees == satoshiFees &&
+        o.satoshiAmount == satoshiAmount &&
+        o.fiatExchangeRate == fiatExchangeRate &&
+        o.fiatCurrencyCode == fiatCurrencyCode &&
+        listEquals(o.participants, participants) &&
+        listEquals(o.attachments, attachments);
   }
 
   @override
   int get hashCode {
     return transactionId.hashCode ^
-      note.hashCode ^
-      appAction.hashCode ^
-      time.hashCode ^
-      type.hashCode ^
-      satoshiFees.hashCode ^
-      satoshiAmount.hashCode ^
-      fiatExchangeRate.hashCode ^
-      fiatCurrencyCode.hashCode ^
-      participants.hashCode ^
-      attachments.hashCode;
+        note.hashCode ^
+        appAction.hashCode ^
+        time.hashCode ^
+        type.hashCode ^
+        satoshiFees.hashCode ^
+        satoshiAmount.hashCode ^
+        fiatExchangeRate.hashCode ^
+        fiatCurrencyCode.hashCode ^
+        participants.hashCode ^
+        attachments.hashCode;
   }
 }

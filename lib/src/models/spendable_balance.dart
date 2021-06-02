@@ -9,12 +9,13 @@ class SpendableBalance {
   final String currencyCode;
 
   SpendableBalance({
-    this.spendableSatoshiBalance,
-    this.spendableFiatBalance,
-    this.currencyCode,
+    required this.spendableSatoshiBalance,
+    required this.spendableFiatBalance,
+    required this.currencyCode,
   });
 
-  factory SpendableBalance.fromJson(Map<String, dynamic> json) => _$SpendableBalanceFromJson(json);
+  factory SpendableBalance.fromJson(Map<String, dynamic> json) =>
+      _$SpendableBalanceFromJson(json);
 
   Map<String, dynamic> toJson() => _$SpendableBalanceToJson(this);
 }

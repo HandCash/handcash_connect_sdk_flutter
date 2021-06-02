@@ -8,11 +8,13 @@ import 'package:handcash_connect_sdk/handcash_connect_sdk.dart';
 
 final HandCashAccountCubit handCashAccountCubit = HandCashAccountCubit();
 final PaymentCubit paymentCubit = PaymentCubit();
-final AuthenticationCubit authenticationCubit = AuthenticationCubit(handCashAccountCubit, paymentCubit);
+final AuthenticationCubit authenticationCubit =
+    AuthenticationCubit(handCashAccountCubit, paymentCubit);
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  HandCashAuthTokenListener().listen((authToken) => authenticationCubit.onGetAuthToken(authToken));
+  HandCashAuthTokenListener()
+      .listen((authToken) => authenticationCubit.onGetAuthToken(authToken));
   HandCashConnect.initialize(appId: '5fd93c56cdaa280ea43bdd66');
   runApp(MyApp());
 }

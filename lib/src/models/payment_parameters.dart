@@ -9,16 +9,17 @@ class PaymentParameters {
   final String description;
   final String appAction;
   final List<PaymentRequestItem> receivers;
-  final Attachment attachment;
+  final Attachment? attachment;
 
   PaymentParameters({
-    this.description,
-    this.appAction,
-    this.receivers,
-    this.attachment,
+    required this.description,
+    required this.appAction,
+    this.receivers = const [],
+    this.attachment = const Attachment(),
   });
 
-  factory PaymentParameters.fromJson(Map<String, dynamic> json) => _$PaymentParametersFromJson(json);
+  factory PaymentParameters.fromJson(Map<String, dynamic> json) =>
+      _$PaymentParametersFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentParametersToJson(this);
 }

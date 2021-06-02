@@ -10,7 +10,7 @@ PaymentRequestItem _$PaymentRequestItemFromJson(Map<String, dynamic> json) {
   return PaymentRequestItem(
     destination: json['destination'] as String,
     currencyCode: json['currencyCode'] as String,
-    sendAmount: (json['sendAmount'] as num)?.toDouble(),
+    sendAmount: (json['sendAmount'] as num).toDouble(),
   );
 }
 

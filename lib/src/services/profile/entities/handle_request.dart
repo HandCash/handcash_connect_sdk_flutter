@@ -6,9 +6,10 @@ part 'handle_request.g.dart';
 class HandleRequest {
   final List<String> aliases;
 
-  HandleRequest({this.aliases});
+  HandleRequest({required this.aliases});
 
-  factory HandleRequest.fromJson(Map<String, dynamic> json) => _$HandleRequestFromJson(json);
+  factory HandleRequest.fromJson(Map<String, dynamic> json) =>
+      _$HandleRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$HandleRequestToJson(this);
 }

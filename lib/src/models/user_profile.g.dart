@@ -8,14 +8,10 @@ part of 'user_profile.dart';
 
 UserProfile _$UserProfileFromJson(Map<String, dynamic> json) {
   return UserProfile(
-    publicProfile: json['publicProfile'] == null
-        ? null
-        : UserPublicProfile.fromJson(
-            json['publicProfile'] as Map<String, dynamic>),
-    privateProfile: json['privateProfile'] == null
-        ? null
-        : UserPrivateProfile.fromJson(
-            json['privateProfile'] as Map<String, dynamic>),
+    publicProfile: UserPublicProfile.fromJson(
+        json['publicProfile'] as Map<String, dynamic>),
+    privateProfile: UserPrivateProfile.fromJson(
+        json['privateProfile'] as Map<String, dynamic>),
   );
 }
 

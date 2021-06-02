@@ -5,15 +5,16 @@ part 'attachment.g.dart';
 
 @JsonSerializable()
 class Attachment {
-  final String value;
-  final AttachmentType format;
+  final String? value;
+  final AttachmentType? format;
 
-  Attachment({
+  const Attachment({
     this.value,
     this.format,
   });
 
-  factory Attachment.fromJson(Map<String, dynamic> json) => _$AttachmentFromJson(json);
+  factory Attachment.fromJson(Map<String, dynamic> json) =>
+      _$AttachmentFromJson(json);
 
   Map<String, dynamic> toJson() => _$AttachmentToJson(this);
 
