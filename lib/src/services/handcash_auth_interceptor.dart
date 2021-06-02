@@ -7,9 +7,9 @@ import 'package:handcash_connect_sdk/src/services/authentication_hash_signer.dar
 import 'package:tuple/tuple.dart';
 
 class HandCashAuthInterceptor extends RequestInterceptor {
-  final String? authToken;
+  final String authToken;
 
-  HandCashAuthInterceptor({this.authToken});
+  HandCashAuthInterceptor({required this.authToken});
 
   @override
   FutureOr<Request> onRequest(Request request) async {
