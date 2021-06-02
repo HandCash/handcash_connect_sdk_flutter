@@ -9,8 +9,7 @@ class PaymentParameters {
   final String description;
   final String appAction;
   final List<PaymentRequestItem> receivers;
-  @JsonKey(defaultValue: const Attachment())
-  final Attachment attachment;
+  final Attachment? attachment;
 
   PaymentParameters({
     required this.description,

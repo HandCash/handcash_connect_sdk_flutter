@@ -13,14 +13,25 @@ PaymentParameters _$PaymentParametersFromJson(Map<String, dynamic> json) {
     receivers: (json['receivers'] as List<dynamic>)
         .map((e) => PaymentRequestItem.fromJson(e as Map<String, dynamic>))
         .toList(),
-    attachment: Attachment.fromJson(json['attachment'] as Map<String, dynamic>),
+    attachment: json['attachment'] == null
+        ? null
+        : Attachment.fromJson(json['attachment'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$PaymentParametersToJson(PaymentParameters instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-      'appAction': instance.appAction,
-      'receivers': instance.receivers,
-      'attachment': instance.attachment,
-    };
+Map<String, dynamic> _$PaymentParametersToJson(PaymentParameters instance) {
+  final val = <String, dynamic>{
+    'description': instance.description,
+    'appAction': instance.appAction,
+    'receivers': instance.receivers,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('attachment', instance.attachment);
+  return val;
+}
