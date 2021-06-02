@@ -8,25 +8,25 @@ class Profile {
 
   Profile(this._profileService);
 
-  Future<UserProfile?> getCurrentProfile() async {
+  Future<UserProfile> getCurrentProfile() async {
     final response = await _profileService.getCurrentProfileRequest();
-    return response.body;
+    return response.body!;
   }
 
-  Future<List<UserPublicProfile>?> getPublicProfilesByHandle(
+  Future<List<UserPublicProfile>> getPublicProfilesByHandle(
       List<String> handles) async {
     final response =
         await _profileService.getPublicProfilesByHandleRequest(handles);
-    return response.body?.items;
+    return response.body!.items;
   }
 
-  Future<List<UserPublicProfile>?> getFriends() async {
+  Future<List<UserPublicProfile>> getFriends() async {
     final response = await _profileService.getUserFriendsRequest();
-    return response.body?.items;
+    return response.body!.items;
   }
 
-  Future<List<Permissions>?> getPermissions() async {
+  Future<List<Permissions>> getPermissions() async {
     final response = await _profileService.getUserPermissionsRequest();
-    return response.body?.items;
+    return response.body!.items;
   }
 }

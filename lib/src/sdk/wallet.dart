@@ -9,25 +9,25 @@ class Wallet {
 
   Wallet(this._walletService);
 
-  Future<SpendableBalance?> getSpendableBalance(String currencyCode) async {
+  Future<SpendableBalance> getSpendableBalance(String currencyCode) async {
     final response = await this._walletService.getSpendableBalance(
           currencyCode,
         )!;
-    return response.body;
+    return response.body!;
   }
 
-  Future<PaymentResult?> pay(PaymentParameters paymentParameters) async {
+  Future<PaymentResult> pay(PaymentParameters paymentParameters) async {
     final response = await this._walletService.pay(paymentParameters)!;
-    return response.body;
+    return response.body!;
   }
 
-  Future<PaymentResult?> getPayment(String transactionId) async {
+  Future<PaymentResult> getPayment(String transactionId) async {
     final response = await this._walletService.getPayment(transactionId)!;
-    return response.body;
+    return response.body!;
   }
 
-  Future<ExchangeRate?> getExchangeRate(String currencyCode) async {
+  Future<ExchangeRate> getExchangeRate(String currencyCode) async {
     final response = await this._walletService.getExchangeRate(currencyCode)!;
-    return response.body;
+    return response.body!;
   }
 }
