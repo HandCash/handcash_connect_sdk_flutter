@@ -8,7 +8,7 @@ class Attachment {
   final String? value;
   final AttachmentType? format;
 
-  Attachment({
+  const Attachment({
     this.value,
     this.format,
   });
