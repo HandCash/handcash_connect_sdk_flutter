@@ -8,9 +8,9 @@ part of 'payment_request_item.dart';
 
 PaymentRequestItem _$PaymentRequestItemFromJson(Map<String, dynamic> json) {
   return PaymentRequestItem(
-    destination: json['destination'] as String?,
-    currencyCode: json['currencyCode'] as String?,
-    sendAmount: (json['sendAmount'] as num?)?.toDouble(),
+    destination: json['destination'] as String,
+    currencyCode: json['currencyCode'] as String,
+    sendAmount: (json['sendAmount'] as num).toDouble(),
   );
 }
 

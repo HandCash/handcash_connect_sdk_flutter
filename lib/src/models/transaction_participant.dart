@@ -4,16 +4,19 @@ part 'transaction_participant.g.dart';
 
 @JsonSerializable()
 class TransactionParticipant {
-  final String? type;
-  final String? alias;
-  final String? displayName;
-  final String? profilePictureUrl;
+  final String type;
+  @JsonKey(defaultValue: '')
+  final String alias;
+  @JsonKey(defaultValue: '')
+  final String displayName;
+  @JsonKey(defaultValue: '')
+  final String profilePictureUrl;
 
   TransactionParticipant({
-    this.type,
-    this.alias,
-    this.displayName,
-    this.profilePictureUrl,
+    required this.type,
+    this.alias = '',
+    this.displayName = '',
+    this.profilePictureUrl = '',
   });
 
   factory TransactionParticipant.fromJson(Map<String, dynamic> json) =>

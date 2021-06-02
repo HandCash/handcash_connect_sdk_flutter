@@ -8,20 +8,20 @@ part of 'payment_result.dart';
 
 PaymentResult _$PaymentResultFromJson(Map<String, dynamic> json) {
   return PaymentResult(
-    transactionId: json['transactionId'] as String?,
-    note: json['note'] as String?,
-    appAction: json['appAction'] as String?,
-    time: json['time'] as int?,
-    type: _$enumDecodeNullable(_$PaymentTypeEnumMap, json['type']),
-    satoshiFees: (json['satoshiFees'] as num?)?.toDouble(),
-    satoshiAmount: (json['satoshiAmount'] as num?)?.toDouble(),
-    fiatExchangeRate: (json['fiatExchangeRate'] as num?)?.toDouble(),
-    fiatCurrencyCode: json['fiatCurrencyCode'] as String?,
-    participants: (json['participants'] as List<dynamic>?)
-        ?.map((e) => TransactionParticipant.fromJson(e as Map<String, dynamic>))
+    transactionId: json['transactionId'] as String,
+    note: json['note'] as String,
+    appAction: json['appAction'] as String,
+    time: json['time'] as int,
+    type: _$enumDecode(_$PaymentTypeEnumMap, json['type']),
+    satoshiFees: (json['satoshiFees'] as num).toDouble(),
+    satoshiAmount: (json['satoshiAmount'] as num).toDouble(),
+    fiatExchangeRate: (json['fiatExchangeRate'] as num).toDouble(),
+    fiatCurrencyCode: json['fiatCurrencyCode'] as String,
+    participants: (json['participants'] as List<dynamic>)
+        .map((e) => TransactionParticipant.fromJson(e as Map<String, dynamic>))
         .toList(),
-    attachments: (json['attachments'] as List<dynamic>?)
-        ?.map((e) => Attachment.fromJson(e as Map<String, dynamic>))
+    attachments: (json['attachments'] as List<dynamic>)
+        .map((e) => Attachment.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
 }
@@ -65,17 +65,6 @@ K _$enumDecode<K, V>(
       return MapEntry(unknownValue, enumValues.values.first);
     },
   ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$PaymentTypeEnumMap = {

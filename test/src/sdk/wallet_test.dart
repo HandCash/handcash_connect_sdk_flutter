@@ -37,10 +37,10 @@ void main() {
         await cloudAccount.wallet.pay(paymentsParameters);
 
     expect(createPaymentResult, isA<PaymentResult>());
-    expect(createPaymentResult?.fiatCurrencyCode, 'USD');
-    expect(createPaymentResult?.appAction, 'test');
-    expect(createPaymentResult?.attachments![0].format, AttachmentType.HEX);
-    expect(createPaymentResult?.attachments![0].value,
+    expect(createPaymentResult.fiatCurrencyCode, 'USD');
+    expect(createPaymentResult.appAction, 'test');
+    expect(createPaymentResult.attachments[0].format, AttachmentType.HEX);
+    expect(createPaymentResult.attachments[0].value,
         '0011223344556677889900AABBCCDDEEFF'.toLowerCase());
   });
 
@@ -89,7 +89,7 @@ void main() {
         await cloudAccount.wallet.getSpendableBalance('USD');
 
     expect(spendableBalance, isA<SpendableBalance>());
-    expect(spendableBalance?.currencyCode, 'USD');
+    expect(spendableBalance.currencyCode, 'USD');
   });
 
   test('should get spendable balance in EUR', () async {
@@ -97,13 +97,13 @@ void main() {
         await cloudAccount.wallet.getSpendableBalance('EUR');
 
     expect(spendableBalance, isA<SpendableBalance>());
-    expect(spendableBalance?.currencyCode, 'EUR');
+    expect(spendableBalance.currencyCode, 'EUR');
   });
 
   test('should get exchange rate in USD', () async {
     final exchangeRate = await cloudAccount.wallet.getExchangeRate('USD');
 
     expect(exchangeRate, isA<ExchangeRate>());
-    expect(exchangeRate?.fiatSymbol, 'USD');
+    expect(exchangeRate.fiatSymbol, 'USD');
   });
 }

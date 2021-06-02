@@ -9,7 +9,7 @@ part of 'handle_request.dart';
 HandleRequest _$HandleRequestFromJson(Map<String, dynamic> json) {
   return HandleRequest(
     aliases:
-        (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
+        (json['aliases'] as List<dynamic>).map((e) => e as String).toList(),
   );
 }
 

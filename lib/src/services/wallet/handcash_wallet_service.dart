@@ -3,7 +3,6 @@ import 'package:handcash_connect_sdk/src/models/payment_parameters.dart';
 import 'package:handcash_connect_sdk/src/models/payment_result.dart';
 import 'package:handcash_connect_sdk/src/models/spendable_balance.dart';
 import 'package:handcash_connect_sdk/src/models/exchange_rate.dart';
-import 'package:handcash_connect_sdk/src/services/wallet/entities/spendable_balance_request.dart';
 
 part "handcash_wallet_service.chopper.dart";
 

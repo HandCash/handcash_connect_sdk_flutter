@@ -8,10 +8,10 @@ part of 'payment_parameters.dart';
 
 PaymentParameters _$PaymentParametersFromJson(Map<String, dynamic> json) {
   return PaymentParameters(
-    description: json['description'] as String?,
-    appAction: json['appAction'] as String?,
-    receivers: (json['receivers'] as List<dynamic>?)
-        ?.map((e) => PaymentRequestItem.fromJson(e as Map<String, dynamic>))
+    description: json['description'] as String,
+    appAction: json['appAction'] as String,
+    receivers: (json['receivers'] as List<dynamic>)
+        .map((e) => PaymentRequestItem.fromJson(e as Map<String, dynamic>))
         .toList(),
     attachment: json['attachment'] == null
         ? null
@@ -20,7 +20,11 @@ PaymentParameters _$PaymentParametersFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$PaymentParametersToJson(PaymentParameters instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{
+    'description': instance.description,
+    'appAction': instance.appAction,
+    'receivers': instance.receivers,
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -28,9 +32,6 @@ Map<String, dynamic> _$PaymentParametersToJson(PaymentParameters instance) {
     }
   }
 
-  writeNotNull('description', instance.description);
-  writeNotNull('appAction', instance.appAction);
-  writeNotNull('receivers', instance.receivers);
   writeNotNull('attachment', instance.attachment);
   return val;
 }

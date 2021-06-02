@@ -9,7 +9,8 @@ part of 'permissions_response.dart';
 PermissionsResponse _$PermissionsResponseFromJson(Map<String, dynamic> json) {
   return PermissionsResponse(
     items: (json['items'] as List<dynamic>)
-        .map((e) => _$enumDecode(_$PermissionsEnumMap, e))
+        .map((e) => _$enumDecode(_$PermissionsEnumMap, e,
+            unknownValue: Permissions.UNKNOWN_PERMISSION_UPGRADED_REQUIRED))
         .toList(),
   );
 }
@@ -53,4 +54,6 @@ const _$PermissionsEnumMap = {
   Permissions.PAY: 'PAY',
   Permissions.FRIENDS: 'FRIENDS',
   Permissions.SIGN_DATA: 'SIGN_DATA',
+  Permissions.UNKNOWN_PERMISSION_UPGRADED_REQUIRED:
+      'UNKNOWN_PERMISSION_UPGRADED_REQUIRED',
 };

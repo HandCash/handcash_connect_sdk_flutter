@@ -13,4 +13,5 @@ enum Permissions {
   FRIENDS,
   @JsonValue("SIGN_DATA")
   SIGN_DATA,
+  UNKNOWN_PERMISSION_UPGRADED_REQUIRED,
 }

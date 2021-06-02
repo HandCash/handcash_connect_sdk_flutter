@@ -9,32 +9,32 @@ part 'payment_result.g.dart';
 
 @JsonSerializable()
 class PaymentResult {
-  final String? transactionId;
-  final String? note;
-  final String? appAction;
-  final int? time;
-  final PaymentType? type;
-  final double? satoshiFees;
-  final double? satoshiAmount;
-  final double? fiatExchangeRate;
+  final String transactionId;
+  final String note;
+  final String appAction;
+  final int time;
+  final PaymentType type;
+  final double satoshiFees;
+  final double satoshiAmount;
+  final double fiatExchangeRate;
 
   /// ISO4218: "USD", "EUR", ...
-  final String? fiatCurrencyCode;
-  final List<TransactionParticipant>? participants;
-  final List<Attachment>? attachments;
+  final String fiatCurrencyCode;
+  final List<TransactionParticipant> participants;
+  final List<Attachment> attachments;
 
   PaymentResult({
-    this.transactionId,
-    this.note,
-    this.appAction,
-    this.time,
-    this.type,
-    this.satoshiFees,
-    this.satoshiAmount,
-    this.fiatExchangeRate,
-    this.fiatCurrencyCode,
-    this.participants,
-    this.attachments,
+    required this.transactionId,
+    required this.note,
+    required this.appAction,
+    required this.time,
+    required this.type,
+    required this.satoshiFees,
+    required this.satoshiAmount,
+    required this.fiatExchangeRate,
+    required this.fiatCurrencyCode,
+    required this.participants,
+    required this.attachments,
   });
 
   factory PaymentResult.fromJson(Map<String, dynamic> json) =>

@@ -7,6 +7,7 @@ part 'permissions_response.g.dart';
 
 @JsonSerializable()
 class PermissionsResponse {
+  @JsonKey(unknownEnumValue: Permissions.UNKNOWN_PERMISSION_UPGRADED_REQUIRED)
   final List<Permissions> items;
 
   PermissionsResponse({

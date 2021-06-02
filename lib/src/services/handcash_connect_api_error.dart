@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 class HandCashConnectApiError implements Exception {
-  final int? httpStatusCode;
-  final String? message;
+  final int httpStatusCode;
+  final String message;
   final Object? info;
 
   HandCashConnectApiError({
-    this.httpStatusCode,
-    this.message,
+    required this.httpStatusCode,
+    required this.message,
     this.info,
   });
 

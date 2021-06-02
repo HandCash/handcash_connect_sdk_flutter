@@ -9,7 +9,7 @@ class HandCashConnect {
   HandCashConnect._();
 
   static void initialize(
-      {String? appId,
+      {required String appId,
       Environment environment = const Environment.production()}) {
     _appId = appId;
     _environment = environment;
