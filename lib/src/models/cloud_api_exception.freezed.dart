@@ -17,7 +17,7 @@ class _$CloudApiExceptionTearOff {
   const _$CloudApiExceptionTearOff();
 
   InvalidRequestError invalidRequest(
-      {String? message,
+      {String message = '',
       int statusCode = 400,
       Map<String, dynamic> info = const {}}) {
     return InvalidRequestError(
@@ -28,7 +28,7 @@ class _$CloudApiExceptionTearOff {
   }
 
   UnauthenticatedError unauthenticated(
-      {String? message, int statusCode = 401}) {
+      {String message = '', int statusCode = 401}) {
     return UnauthenticatedError(
       message: message,
       statusCode: statusCode,
@@ -36,14 +36,14 @@ class _$CloudApiExceptionTearOff {
   }
 
   InvalidAuthenticationError invalidAuthentication(
-      {String? message, int statusCode = 403}) {
+      {String message = '', int statusCode = 403}) {
     return InvalidAuthenticationError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-  ConflictError conflict({String? message, int statusCode = 409}) {
+  ConflictError conflict({String message = '', int statusCode = 409}) {
     return ConflictError(
       message: message,
       statusCode: statusCode,
@@ -51,14 +51,14 @@ class _$CloudApiExceptionTearOff {
   }
 
   ContentTooLargeError contentTooLarge(
-      {String? message, int statusCode = 413}) {
+      {String message = '', int statusCode = 413}) {
     return ContentTooLargeError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-  DeprecatedError deprecated({String? message, int statusCode = 410}) {
+  DeprecatedError deprecated({String message = '', int statusCode = 410}) {
     return DeprecatedError(
       message: message,
       statusCode: statusCode,
@@ -66,14 +66,14 @@ class _$CloudApiExceptionTearOff {
   }
 
   OutdatedAppVersionError outdatedAppVersion(
-      {String? message, int statusCode = 450}) {
+      {String message = '', int statusCode = 450}) {
     return OutdatedAppVersionError(
       message: message,
       statusCode: statusCode,
     );
   }
 
-  ServerError serverError({String? message, int statusCode = 500}) {
+  ServerError serverError({String message = '', int statusCode = 500}) {
     return ServerError(
       message: message,
       statusCode: statusCode,
@@ -81,7 +81,7 @@ class _$CloudApiExceptionTearOff {
   }
 
   ExternalServiceNotAvailableError externalServiceNotAvailable(
-      {String? message, int statusCode = 503}) {
+      {String message = '', int statusCode = 503}) {
     return ExternalServiceNotAvailableError(
       message: message,
       statusCode: statusCode,
@@ -92,7 +92,7 @@ class _$CloudApiExceptionTearOff {
     return const NoInternetConnection();
   }
 
-  UnknownError unknownError({String? message}) {
+  UnknownError unknownError({String message = ''}) {
     return UnknownError(
       message: message,
     );
@@ -107,39 +107,38 @@ mixin _$CloudApiException {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -201,7 +200,7 @@ abstract class $InvalidRequestErrorCopyWith<$Res> {
   factory $InvalidRequestErrorCopyWith(
           InvalidRequestError value, $Res Function(InvalidRequestError) then) =
       _$InvalidRequestErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode, Map<String, dynamic> info});
+  $Res call({String message, int statusCode, Map<String, dynamic> info});
 }
 
 /// @nodoc
@@ -225,7 +224,7 @@ class _$InvalidRequestErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -242,10 +241,11 @@ class _$InvalidRequestErrorCopyWithImpl<$Res>
 
 class _$InvalidRequestError implements InvalidRequestError {
   const _$InvalidRequestError(
-      {this.message, this.statusCode = 400, this.info = const {}});
+      {this.message = '', this.statusCode = 400, this.info = const {}});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 400)
   @override
   final int statusCode;
@@ -288,21 +288,21 @@ class _$InvalidRequestError implements InvalidRequestError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return invalidRequest(message, statusCode, info);
   }
@@ -310,20 +310,19 @@ class _$InvalidRequestError implements InvalidRequestError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (invalidRequest != null) {
@@ -378,11 +377,11 @@ class _$InvalidRequestError implements InvalidRequestError {
 
 abstract class InvalidRequestError implements CloudApiException {
   const factory InvalidRequestError(
-      {String? message,
+      {String message,
       int statusCode,
       Map<String, dynamic> info}) = _$InvalidRequestError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   Map<String, dynamic> get info => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -395,7 +394,7 @@ abstract class $UnauthenticatedErrorCopyWith<$Res> {
   factory $UnauthenticatedErrorCopyWith(UnauthenticatedError value,
           $Res Function(UnauthenticatedError) then) =
       _$UnauthenticatedErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -418,7 +417,7 @@ class _$UnauthenticatedErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -430,10 +429,11 @@ class _$UnauthenticatedErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UnauthenticatedError implements UnauthenticatedError {
-  const _$UnauthenticatedError({this.message, this.statusCode = 401});
+  const _$UnauthenticatedError({this.message = '', this.statusCode = 401});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 401)
   @override
   final int statusCode;
@@ -471,21 +471,21 @@ class _$UnauthenticatedError implements UnauthenticatedError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return unauthenticated(message, statusCode);
   }
@@ -493,20 +493,19 @@ class _$UnauthenticatedError implements UnauthenticatedError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (unauthenticated != null) {
@@ -560,10 +559,10 @@ class _$UnauthenticatedError implements UnauthenticatedError {
 }
 
 abstract class UnauthenticatedError implements CloudApiException {
-  const factory UnauthenticatedError({String? message, int statusCode}) =
+  const factory UnauthenticatedError({String message, int statusCode}) =
       _$UnauthenticatedError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UnauthenticatedErrorCopyWith<UnauthenticatedError> get copyWith =>
@@ -575,7 +574,7 @@ abstract class $InvalidAuthenticationErrorCopyWith<$Res> {
   factory $InvalidAuthenticationErrorCopyWith(InvalidAuthenticationError value,
           $Res Function(InvalidAuthenticationError) then) =
       _$InvalidAuthenticationErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -599,7 +598,7 @@ class _$InvalidAuthenticationErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -611,10 +610,12 @@ class _$InvalidAuthenticationErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InvalidAuthenticationError implements InvalidAuthenticationError {
-  const _$InvalidAuthenticationError({this.message, this.statusCode = 403});
+  const _$InvalidAuthenticationError(
+      {this.message = '', this.statusCode = 403});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 403)
   @override
   final int statusCode;
@@ -653,21 +654,21 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return invalidAuthentication(message, statusCode);
   }
@@ -675,20 +676,19 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (invalidAuthentication != null) {
@@ -742,10 +742,10 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
 }
 
 abstract class InvalidAuthenticationError implements CloudApiException {
-  const factory InvalidAuthenticationError({String? message, int statusCode}) =
+  const factory InvalidAuthenticationError({String message, int statusCode}) =
       _$InvalidAuthenticationError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InvalidAuthenticationErrorCopyWith<InvalidAuthenticationError>
@@ -757,7 +757,7 @@ abstract class $ConflictErrorCopyWith<$Res> {
   factory $ConflictErrorCopyWith(
           ConflictError value, $Res Function(ConflictError) then) =
       _$ConflictErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -780,7 +780,7 @@ class _$ConflictErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -792,10 +792,11 @@ class _$ConflictErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ConflictError implements ConflictError {
-  const _$ConflictError({this.message, this.statusCode = 409});
+  const _$ConflictError({this.message = '', this.statusCode = 409});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 409)
   @override
   final int statusCode;
@@ -832,21 +833,21 @@ class _$ConflictError implements ConflictError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return conflict(message, statusCode);
   }
@@ -854,20 +855,19 @@ class _$ConflictError implements ConflictError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (conflict != null) {
@@ -921,10 +921,10 @@ class _$ConflictError implements ConflictError {
 }
 
 abstract class ConflictError implements CloudApiException {
-  const factory ConflictError({String? message, int statusCode}) =
+  const factory ConflictError({String message, int statusCode}) =
       _$ConflictError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ConflictErrorCopyWith<ConflictError> get copyWith =>
@@ -936,7 +936,7 @@ abstract class $ContentTooLargeErrorCopyWith<$Res> {
   factory $ContentTooLargeErrorCopyWith(ContentTooLargeError value,
           $Res Function(ContentTooLargeError) then) =
       _$ContentTooLargeErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -959,7 +959,7 @@ class _$ContentTooLargeErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -971,10 +971,11 @@ class _$ContentTooLargeErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ContentTooLargeError implements ContentTooLargeError {
-  const _$ContentTooLargeError({this.message, this.statusCode = 413});
+  const _$ContentTooLargeError({this.message = '', this.statusCode = 413});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 413)
   @override
   final int statusCode;
@@ -1012,21 +1013,21 @@ class _$ContentTooLargeError implements ContentTooLargeError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return contentTooLarge(message, statusCode);
   }
@@ -1034,20 +1035,19 @@ class _$ContentTooLargeError implements ContentTooLargeError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (contentTooLarge != null) {
@@ -1101,10 +1101,10 @@ class _$ContentTooLargeError implements ContentTooLargeError {
 }
 
 abstract class ContentTooLargeError implements CloudApiException {
-  const factory ContentTooLargeError({String? message, int statusCode}) =
+  const factory ContentTooLargeError({String message, int statusCode}) =
       _$ContentTooLargeError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ContentTooLargeErrorCopyWith<ContentTooLargeError> get copyWith =>
@@ -1116,7 +1116,7 @@ abstract class $DeprecatedErrorCopyWith<$Res> {
   factory $DeprecatedErrorCopyWith(
           DeprecatedError value, $Res Function(DeprecatedError) then) =
       _$DeprecatedErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -1139,7 +1139,7 @@ class _$DeprecatedErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -1151,10 +1151,11 @@ class _$DeprecatedErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeprecatedError implements DeprecatedError {
-  const _$DeprecatedError({this.message, this.statusCode = 410});
+  const _$DeprecatedError({this.message = '', this.statusCode = 410});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 410)
   @override
   final int statusCode;
@@ -1191,21 +1192,21 @@ class _$DeprecatedError implements DeprecatedError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return deprecated(message, statusCode);
   }
@@ -1213,20 +1214,19 @@ class _$DeprecatedError implements DeprecatedError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (deprecated != null) {
@@ -1280,10 +1280,10 @@ class _$DeprecatedError implements DeprecatedError {
 }
 
 abstract class DeprecatedError implements CloudApiException {
-  const factory DeprecatedError({String? message, int statusCode}) =
+  const factory DeprecatedError({String message, int statusCode}) =
       _$DeprecatedError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeprecatedErrorCopyWith<DeprecatedError> get copyWith =>
@@ -1295,7 +1295,7 @@ abstract class $OutdatedAppVersionErrorCopyWith<$Res> {
   factory $OutdatedAppVersionErrorCopyWith(OutdatedAppVersionError value,
           $Res Function(OutdatedAppVersionError) then) =
       _$OutdatedAppVersionErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -1318,7 +1318,7 @@ class _$OutdatedAppVersionErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -1330,10 +1330,11 @@ class _$OutdatedAppVersionErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OutdatedAppVersionError implements OutdatedAppVersionError {
-  const _$OutdatedAppVersionError({this.message, this.statusCode = 450});
+  const _$OutdatedAppVersionError({this.message = '', this.statusCode = 450});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 450)
   @override
   final int statusCode;
@@ -1371,21 +1372,21 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return outdatedAppVersion(message, statusCode);
   }
@@ -1393,20 +1394,19 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (outdatedAppVersion != null) {
@@ -1460,10 +1460,10 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
 }
 
 abstract class OutdatedAppVersionError implements CloudApiException {
-  const factory OutdatedAppVersionError({String? message, int statusCode}) =
+  const factory OutdatedAppVersionError({String message, int statusCode}) =
       _$OutdatedAppVersionError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $OutdatedAppVersionErrorCopyWith<OutdatedAppVersionError> get copyWith =>
@@ -1475,7 +1475,7 @@ abstract class $ServerErrorCopyWith<$Res> {
   factory $ServerErrorCopyWith(
           ServerError value, $Res Function(ServerError) then) =
       _$ServerErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -1498,7 +1498,7 @@ class _$ServerErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -1510,10 +1510,11 @@ class _$ServerErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ServerError implements ServerError {
-  const _$ServerError({this.message, this.statusCode = 500});
+  const _$ServerError({this.message = '', this.statusCode = 500});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 500)
   @override
   final int statusCode;
@@ -1550,21 +1551,21 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return serverError(message, statusCode);
   }
@@ -1572,20 +1573,19 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -1639,9 +1639,9 @@ class _$ServerError implements ServerError {
 }
 
 abstract class ServerError implements CloudApiException {
-  const factory ServerError({String? message, int statusCode}) = _$ServerError;
+  const factory ServerError({String message, int statusCode}) = _$ServerError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ServerErrorCopyWith<ServerError> get copyWith =>
@@ -1654,7 +1654,7 @@ abstract class $ExternalServiceNotAvailableErrorCopyWith<$Res> {
           ExternalServiceNotAvailableError value,
           $Res Function(ExternalServiceNotAvailableError) then) =
       _$ExternalServiceNotAvailableErrorCopyWithImpl<$Res>;
-  $Res call({String? message, int statusCode});
+  $Res call({String message, int statusCode});
 }
 
 /// @nodoc
@@ -1679,7 +1679,7 @@ class _$ExternalServiceNotAvailableErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -1693,10 +1693,11 @@ class _$ExternalServiceNotAvailableErrorCopyWithImpl<$Res>
 class _$ExternalServiceNotAvailableError
     implements ExternalServiceNotAvailableError {
   const _$ExternalServiceNotAvailableError(
-      {this.message, this.statusCode = 503});
+      {this.message = '', this.statusCode = 503});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
   @JsonKey(defaultValue: 503)
   @override
   final int statusCode;
@@ -1734,21 +1735,21 @@ class _$ExternalServiceNotAvailableError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return externalServiceNotAvailable(message, statusCode);
   }
@@ -1756,20 +1757,19 @@ class _$ExternalServiceNotAvailableError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (externalServiceNotAvailable != null) {
@@ -1824,9 +1824,9 @@ class _$ExternalServiceNotAvailableError
 
 abstract class ExternalServiceNotAvailableError implements CloudApiException {
   const factory ExternalServiceNotAvailableError(
-      {String? message, int statusCode}) = _$ExternalServiceNotAvailableError;
+      {String message, int statusCode}) = _$ExternalServiceNotAvailableError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ExternalServiceNotAvailableErrorCopyWith<ExternalServiceNotAvailableError>
@@ -1874,21 +1874,21 @@ class _$NoInternetConnection implements NoInternetConnection {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return noInternetConnection();
   }
@@ -1896,20 +1896,19 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (noInternetConnection != null) {
@@ -1971,7 +1970,7 @@ abstract class $UnknownErrorCopyWith<$Res> {
   factory $UnknownErrorCopyWith(
           UnknownError value, $Res Function(UnknownError) then) =
       _$UnknownErrorCopyWithImpl<$Res>;
-  $Res call({String? message});
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -1993,7 +1992,7 @@ class _$UnknownErrorCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -2001,10 +2000,11 @@ class _$UnknownErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UnknownError implements UnknownError {
-  const _$UnknownError({this.message});
+  const _$UnknownError({this.message = ''});
 
+  @JsonKey(defaultValue: '')
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString() {
@@ -2032,21 +2032,21 @@ class _$UnknownError implements UnknownError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)
+            String message, int statusCode, Map<String, dynamic> info)
         invalidRequest,
-    required TResult Function(String? message, int statusCode) unauthenticated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) unauthenticated,
+    required TResult Function(String message, int statusCode)
         invalidAuthentication,
-    required TResult Function(String? message, int statusCode) conflict,
-    required TResult Function(String? message, int statusCode) contentTooLarge,
-    required TResult Function(String? message, int statusCode) deprecated,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) conflict,
+    required TResult Function(String message, int statusCode) contentTooLarge,
+    required TResult Function(String message, int statusCode) deprecated,
+    required TResult Function(String message, int statusCode)
         outdatedAppVersion,
-    required TResult Function(String? message, int statusCode) serverError,
-    required TResult Function(String? message, int statusCode)
+    required TResult Function(String message, int statusCode) serverError,
+    required TResult Function(String message, int statusCode)
         externalServiceNotAvailable,
     required TResult Function() noInternetConnection,
-    required TResult Function(String? message) unknownError,
+    required TResult Function(String message) unknownError,
   }) {
     return unknownError(message);
   }
@@ -2054,20 +2054,19 @@ class _$UnknownError implements UnknownError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? message, int statusCode, Map<String, dynamic> info)?
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
-    TResult Function(String? message, int statusCode)? unauthenticated,
-    TResult Function(String? message, int statusCode)? invalidAuthentication,
-    TResult Function(String? message, int statusCode)? conflict,
-    TResult Function(String? message, int statusCode)? contentTooLarge,
-    TResult Function(String? message, int statusCode)? deprecated,
-    TResult Function(String? message, int statusCode)? outdatedAppVersion,
-    TResult Function(String? message, int statusCode)? serverError,
-    TResult Function(String? message, int statusCode)?
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
         externalServiceNotAvailable,
     TResult Function()? noInternetConnection,
-    TResult Function(String? message)? unknownError,
+    TResult Function(String message)? unknownError,
     required TResult orElse(),
   }) {
     if (unknownError != null) {
@@ -2121,9 +2120,9 @@ class _$UnknownError implements UnknownError {
 }
 
 abstract class UnknownError implements CloudApiException {
-  const factory UnknownError({String? message}) = _$UnknownError;
+  const factory UnknownError({String message}) = _$UnknownError;
 
-  String? get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UnknownErrorCopyWith<UnknownError> get copyWith =>
       throw _privateConstructorUsedError;
