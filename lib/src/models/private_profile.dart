@@ -4,12 +4,14 @@ part 'private_profile.g.dart';
 
 @JsonSerializable()
 class UserPrivateProfile {
-  final String? phoneNumber;
-  final String? email;
+  @JsonKey(defaultValue: '')
+  final String phoneNumber;
+  @JsonKey(defaultValue: '')
+  final String email;
 
   UserPrivateProfile({
-    this.phoneNumber,
-    this.email,
+    this.phoneNumber = '',
+    this.email = '',
   });
 
   factory UserPrivateProfile.fromJson(Map<String, dynamic> json) =>
