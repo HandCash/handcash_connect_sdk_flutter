@@ -12,7 +12,7 @@ void main() {
     final userProfile = await cloudAccount.profile.getCurrentProfile();
 
     expect(userProfile, isA<UserProfile>());
-    expect(BitcoinUnits.values.contains(userProfile!.publicProfile.bitcoinUnit),
+    expect(BitcoinUnits.values.contains(userProfile.publicProfile.bitcoinUnit),
         true);
   });
 
@@ -20,7 +20,7 @@ void main() {
     final friends = await (cloudAccount.profile.getFriends());
 
     expect(friends, isA<List<UserPublicProfile>>());
-    expect(friends!.length > 0, true);
+    expect(friends.length > 0, true);
   });
 
   test('should get public user profiles by handle', () async {
@@ -28,7 +28,7 @@ void main() {
         await (cloudAccount.profile.getPublicProfilesByHandle(['tester']));
 
     expect(publicProfiles, isA<List<UserPublicProfile>>());
-    expect(publicProfiles!.length > 0, true);
+    expect(publicProfiles.length > 0, true);
   });
 
   test('should get public user profiles by handle with two handles', () async {
@@ -36,7 +36,7 @@ void main() {
         .getPublicProfilesByHandle(['tester', 'rjseibane']));
 
     expect(publicProfiles, isA<List<UserPublicProfile>>());
-    expect(publicProfiles!.length > 1, true);
+    expect(publicProfiles.length > 1, true);
   });
 
   test('should get current user permissions', () async {
@@ -44,7 +44,7 @@ void main() {
 
     expect(
         userPermissions
-            ?.any((permission) => Permissions.values.contains(permission)),
+            .any((permission) => Permissions.values.contains(permission)),
         true);
   });
 
