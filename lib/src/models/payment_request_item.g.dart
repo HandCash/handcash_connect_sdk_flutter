@@ -6,13 +6,12 @@ part of 'payment_request_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentRequestItem _$PaymentRequestItemFromJson(Map<String, dynamic> json) {
-  return PaymentRequestItem(
-    destination: json['destination'] as String,
-    currencyCode: json['currencyCode'] as String,
-    sendAmount: (json['sendAmount'] as num).toDouble(),
-  );
-}
+PaymentRequestItem _$PaymentRequestItemFromJson(Map<String, dynamic> json) =>
+    PaymentRequestItem(
+      destination: json['destination'] as String,
+      currencyCode: json['currencyCode'] as String,
+      sendAmount: (json['sendAmount'] as num).toDouble(),
+    );
 
 Map<String, dynamic> _$PaymentRequestItemToJson(PaymentRequestItem instance) =>
     <String, dynamic>{

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'cloud_api_exception.dart';
 
@@ -125,6 +126,23 @@ mixin _$CloudApiException {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, int statusCode, Map<String, dynamic> info)?
         invalidRequest,
@@ -157,6 +175,22 @@ mixin _$CloudApiException {
         externalServiceNotAvailable,
     required TResult Function(NoInternetConnection value) noInternetConnection,
     required TResult Function(UnknownError value) unknownError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -261,23 +295,17 @@ class _$InvalidRequestError implements InvalidRequestError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidRequestError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is InvalidRequestError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)) &&
-            (identical(other.info, info) ||
-                const DeepCollectionEquality().equals(other.info, info)));
+                other.statusCode == statusCode) &&
+            const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode) ^
-      const DeepCollectionEquality().hash(info);
+  int get hashCode => Object.hash(runtimeType, message, statusCode,
+      const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
   @override
@@ -305,6 +333,26 @@ class _$InvalidRequestError implements InvalidRequestError {
     required TResult Function(String message) unknownError,
   }) {
     return invalidRequest(message, statusCode, info);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return invalidRequest?.call(message, statusCode, info);
   }
 
   @override
@@ -353,6 +401,25 @@ class _$InvalidRequestError implements InvalidRequestError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return invalidRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -381,9 +448,9 @@ abstract class InvalidRequestError implements CloudApiException {
       int statusCode,
       Map<String, dynamic> info}) = _$InvalidRequestError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
-  Map<String, dynamic> get info => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
+  Map<String, dynamic> get info;
   @JsonKey(ignore: true)
   $InvalidRequestErrorCopyWith<InvalidRequestError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -446,20 +513,15 @@ class _$UnauthenticatedError implements UnauthenticatedError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UnauthenticatedError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is UnauthenticatedError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -488,6 +550,26 @@ class _$UnauthenticatedError implements UnauthenticatedError {
     required TResult Function(String message) unknownError,
   }) {
     return unauthenticated(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return unauthenticated?.call(message, statusCode);
   }
 
   @override
@@ -536,6 +618,25 @@ class _$UnauthenticatedError implements UnauthenticatedError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return unauthenticated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -562,8 +663,8 @@ abstract class UnauthenticatedError implements CloudApiException {
   const factory UnauthenticatedError({String message, int statusCode}) =
       _$UnauthenticatedError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $UnauthenticatedErrorCopyWith<UnauthenticatedError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -628,20 +729,15 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidAuthenticationError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is InvalidAuthenticationError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -671,6 +767,26 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
     required TResult Function(String message) unknownError,
   }) {
     return invalidAuthentication(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return invalidAuthentication?.call(message, statusCode);
   }
 
   @override
@@ -719,6 +835,25 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return invalidAuthentication?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -745,8 +880,8 @@ abstract class InvalidAuthenticationError implements CloudApiException {
   const factory InvalidAuthenticationError({String message, int statusCode}) =
       _$InvalidAuthenticationError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $InvalidAuthenticationErrorCopyWith<InvalidAuthenticationError>
       get copyWith => throw _privateConstructorUsedError;
@@ -809,20 +944,15 @@ class _$ConflictError implements ConflictError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ConflictError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is ConflictError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -850,6 +980,26 @@ class _$ConflictError implements ConflictError {
     required TResult Function(String message) unknownError,
   }) {
     return conflict(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return conflict?.call(message, statusCode);
   }
 
   @override
@@ -898,6 +1048,25 @@ class _$ConflictError implements ConflictError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return conflict?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -924,8 +1093,8 @@ abstract class ConflictError implements CloudApiException {
   const factory ConflictError({String message, int statusCode}) =
       _$ConflictError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $ConflictErrorCopyWith<ConflictError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -988,20 +1157,15 @@ class _$ContentTooLargeError implements ContentTooLargeError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ContentTooLargeError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is ContentTooLargeError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -1030,6 +1194,26 @@ class _$ContentTooLargeError implements ContentTooLargeError {
     required TResult Function(String message) unknownError,
   }) {
     return contentTooLarge(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return contentTooLarge?.call(message, statusCode);
   }
 
   @override
@@ -1078,6 +1262,25 @@ class _$ContentTooLargeError implements ContentTooLargeError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return contentTooLarge?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -1104,8 +1307,8 @@ abstract class ContentTooLargeError implements CloudApiException {
   const factory ContentTooLargeError({String message, int statusCode}) =
       _$ContentTooLargeError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $ContentTooLargeErrorCopyWith<ContentTooLargeError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1168,20 +1371,15 @@ class _$DeprecatedError implements DeprecatedError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DeprecatedError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is DeprecatedError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -1209,6 +1407,26 @@ class _$DeprecatedError implements DeprecatedError {
     required TResult Function(String message) unknownError,
   }) {
     return deprecated(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return deprecated?.call(message, statusCode);
   }
 
   @override
@@ -1257,6 +1475,25 @@ class _$DeprecatedError implements DeprecatedError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return deprecated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -1283,8 +1520,8 @@ abstract class DeprecatedError implements CloudApiException {
   const factory DeprecatedError({String message, int statusCode}) =
       _$DeprecatedError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $DeprecatedErrorCopyWith<DeprecatedError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1347,20 +1584,15 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is OutdatedAppVersionError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is OutdatedAppVersionError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -1389,6 +1621,26 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
     required TResult Function(String message) unknownError,
   }) {
     return outdatedAppVersion(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return outdatedAppVersion?.call(message, statusCode);
   }
 
   @override
@@ -1437,6 +1689,25 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return outdatedAppVersion?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -1463,8 +1734,8 @@ abstract class OutdatedAppVersionError implements CloudApiException {
   const factory OutdatedAppVersionError({String message, int statusCode}) =
       _$OutdatedAppVersionError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $OutdatedAppVersionErrorCopyWith<OutdatedAppVersionError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1527,20 +1798,15 @@ class _$ServerError implements ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ServerError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is ServerError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -1568,6 +1834,26 @@ class _$ServerError implements ServerError {
     required TResult Function(String message) unknownError,
   }) {
     return serverError(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return serverError?.call(message, statusCode);
   }
 
   @override
@@ -1616,6 +1902,25 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return serverError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -1641,8 +1946,8 @@ class _$ServerError implements ServerError {
 abstract class ServerError implements CloudApiException {
   const factory ServerError({String message, int statusCode}) = _$ServerError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $ServerErrorCopyWith<ServerError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1710,20 +2015,15 @@ class _$ExternalServiceNotAvailableError
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ExternalServiceNotAvailableError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
+        (other.runtimeType == runtimeType &&
+            other is ExternalServiceNotAvailableError &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.statusCode, statusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusCode, statusCode)));
+                other.statusCode == statusCode));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(message) ^
-      const DeepCollectionEquality().hash(statusCode);
+  int get hashCode => Object.hash(runtimeType, message, statusCode);
 
   @JsonKey(ignore: true)
   @override
@@ -1752,6 +2052,26 @@ class _$ExternalServiceNotAvailableError
     required TResult Function(String message) unknownError,
   }) {
     return externalServiceNotAvailable(message, statusCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return externalServiceNotAvailable?.call(message, statusCode);
   }
 
   @override
@@ -1800,6 +2120,25 @@ class _$ExternalServiceNotAvailableError
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return externalServiceNotAvailable?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -1826,8 +2165,8 @@ abstract class ExternalServiceNotAvailableError implements CloudApiException {
   const factory ExternalServiceNotAvailableError(
       {String message, int statusCode}) = _$ExternalServiceNotAvailableError;
 
-  String get message => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
+  String get message;
+  int get statusCode;
   @JsonKey(ignore: true)
   $ExternalServiceNotAvailableErrorCopyWith<ExternalServiceNotAvailableError>
       get copyWith => throw _privateConstructorUsedError;
@@ -1864,7 +2203,8 @@ class _$NoInternetConnection implements NoInternetConnection {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NoInternetConnection);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is NoInternetConnection);
   }
 
   @override
@@ -1891,6 +2231,26 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function(String message) unknownError,
   }) {
     return noInternetConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return noInternetConnection?.call();
   }
 
   @override
@@ -1935,6 +2295,25 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function(UnknownError value) unknownError,
   }) {
     return noInternetConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return noInternetConnection?.call(this);
   }
 
   @override
@@ -2014,14 +2393,13 @@ class _$UnknownError implements UnknownError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UnknownError &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is UnknownError &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -2049,6 +2427,26 @@ class _$UnknownError implements UnknownError {
     required TResult Function(String message) unknownError,
   }) {
     return unknownError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, int statusCode, Map<String, dynamic> info)?
+        invalidRequest,
+    TResult Function(String message, int statusCode)? unauthenticated,
+    TResult Function(String message, int statusCode)? invalidAuthentication,
+    TResult Function(String message, int statusCode)? conflict,
+    TResult Function(String message, int statusCode)? contentTooLarge,
+    TResult Function(String message, int statusCode)? deprecated,
+    TResult Function(String message, int statusCode)? outdatedAppVersion,
+    TResult Function(String message, int statusCode)? serverError,
+    TResult Function(String message, int statusCode)?
+        externalServiceNotAvailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(String message)? unknownError,
+  }) {
+    return unknownError?.call(message);
   }
 
   @override
@@ -2097,6 +2495,25 @@ class _$UnknownError implements UnknownError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidRequestError value)? invalidRequest,
+    TResult Function(UnauthenticatedError value)? unauthenticated,
+    TResult Function(InvalidAuthenticationError value)? invalidAuthentication,
+    TResult Function(ConflictError value)? conflict,
+    TResult Function(ContentTooLargeError value)? contentTooLarge,
+    TResult Function(DeprecatedError value)? deprecated,
+    TResult Function(OutdatedAppVersionError value)? outdatedAppVersion,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(ExternalServiceNotAvailableError value)?
+        externalServiceNotAvailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(UnknownError value)? unknownError,
+  }) {
+    return unknownError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidRequestError value)? invalidRequest,
     TResult Function(UnauthenticatedError value)? unauthenticated,
@@ -2122,7 +2539,7 @@ class _$UnknownError implements UnknownError {
 abstract class UnknownError implements CloudApiException {
   const factory UnknownError({String message}) = _$UnknownError;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
   $UnknownErrorCopyWith<UnknownError> get copyWith =>
       throw _privateConstructorUsedError;

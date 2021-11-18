@@ -1,3 +1,5 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
 part of 'handcash_wallet_service.dart';
 
 // **************************************************************************
@@ -40,7 +42,7 @@ class _$HandCashWalletService extends HandCashWalletService {
 
   @override
   Future<Response<ExchangeRate>> getExchangeRate(String currencyCode) {
-    final $url = '/v1/connect/wallet/exchangeRate/$currencyCode';
+    final $url = '/v1/connect/wallet/exchangeRate/${currencyCode}';
     final $request = Request('GET', $url, client.baseUrl);
     return client.send<ExchangeRate, ExchangeRate>($request);
   }

@@ -6,18 +6,19 @@ part of 'payment_parameters.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentParameters _$PaymentParametersFromJson(Map<String, dynamic> json) {
-  return PaymentParameters(
-    description: json['description'] as String,
-    appAction: json['appAction'] as String,
-    receivers: (json['receivers'] as List<dynamic>)
-        .map((e) => PaymentRequestItem.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    attachment: json['attachment'] == null
-        ? null
-        : Attachment.fromJson(json['attachment'] as Map<String, dynamic>),
-  );
-}
+PaymentParameters _$PaymentParametersFromJson(Map<String, dynamic> json) =>
+    PaymentParameters(
+      description: json['description'] as String,
+      appAction: json['appAction'] as String,
+      receivers: (json['receivers'] as List<dynamic>?)
+              ?.map(
+                  (e) => PaymentRequestItem.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      attachment: json['attachment'] == null
+          ? const Attachment()
+          : Attachment.fromJson(json['attachment'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$PaymentParametersToJson(PaymentParameters instance) {
   final val = <String, dynamic>{

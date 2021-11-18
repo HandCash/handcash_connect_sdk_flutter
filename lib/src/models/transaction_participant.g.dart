@@ -7,14 +7,13 @@ part of 'transaction_participant.dart';
 // **************************************************************************
 
 TransactionParticipant _$TransactionParticipantFromJson(
-    Map<String, dynamic> json) {
-  return TransactionParticipant(
-    type: json['type'] as String,
-    alias: json['alias'] as String? ?? '',
-    displayName: json['displayName'] as String? ?? '',
-    profilePictureUrl: json['profilePictureUrl'] as String? ?? '',
-  );
-}
+        Map<String, dynamic> json) =>
+    TransactionParticipant(
+      type: json['type'] as String,
+      alias: json['alias'] as String? ?? '',
+      displayName: json['displayName'] as String? ?? '',
+      profilePictureUrl: json['profilePictureUrl'] as String? ?? '',
+    );
 
 Map<String, dynamic> _$TransactionParticipantToJson(
         TransactionParticipant instance) =>

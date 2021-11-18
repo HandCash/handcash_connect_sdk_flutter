@@ -6,12 +6,11 @@ part of 'private_profile.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserPrivateProfile _$UserPrivateProfileFromJson(Map<String, dynamic> json) {
-  return UserPrivateProfile(
-    phoneNumber: json['phoneNumber'] as String? ?? '',
-    email: json['email'] as String? ?? '',
-  );
-}
+UserPrivateProfile _$UserPrivateProfileFromJson(Map<String, dynamic> json) =>
+    UserPrivateProfile(
+      phoneNumber: json['phoneNumber'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+    );
 
 Map<String, dynamic> _$UserPrivateProfileToJson(UserPrivateProfile instance) =>
     <String, dynamic>{

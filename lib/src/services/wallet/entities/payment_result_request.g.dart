@@ -6,11 +6,11 @@ part of 'payment_result_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentResultRequest _$PaymentResultRequestFromJson(Map<String, dynamic> json) {
-  return PaymentResultRequest(
-    json['transactionId'] as String?,
-  );
-}
+PaymentResultRequest _$PaymentResultRequestFromJson(
+        Map<String, dynamic> json) =>
+    PaymentResultRequest(
+      json['transactionId'] as String?,
+    );
 
 Map<String, dynamic> _$PaymentResultRequestToJson(
         PaymentResultRequest instance) =>
