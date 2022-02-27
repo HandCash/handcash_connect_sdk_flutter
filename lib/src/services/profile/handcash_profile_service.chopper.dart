@@ -1,3 +1,5 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
 part of 'handcash_profile_service.dart';
 
 // **************************************************************************
