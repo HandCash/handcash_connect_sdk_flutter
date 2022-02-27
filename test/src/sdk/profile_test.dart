@@ -30,7 +30,7 @@ void main() {
   });
 
   test('should get public user profiles by handle with two handles', () async {
-    final publicProfiles = await (cloudAccount.profile.getPublicProfilesByHandle(['tester', 'rjseibane']));
+    final publicProfiles = await (cloudAccount.profile.getPublicProfilesByHandle(['tester', 'rafa']));
 
     expect(publicProfiles, isA<List<UserPublicProfile>>());
     expect(publicProfiles.length > 1, true);
