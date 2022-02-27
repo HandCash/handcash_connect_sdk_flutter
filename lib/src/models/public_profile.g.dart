@@ -14,7 +14,8 @@ UserPublicProfile _$UserPublicProfileFromJson(Map<String, dynamic> json) {
     displayName: json['displayName'] as String,
     avatarUrl: json['avatarUrl'] as String,
     localCurrencyCode: json['localCurrencyCode'] as String,
-    bitcoinUnit: _$enumDecode(_$BitcoinUnitsEnumMap, json['bitcoinUnit']),
+    bitcoinUnit: _$enumDecode(_$BitcoinUnitsEnumMap, json['bitcoinUnit'],
+        unknownValue: BitcoinUnits.bsv),
   );
 }
 
@@ -58,4 +59,5 @@ K _$enumDecode<K, V>(
 const _$BitcoinUnitsEnumMap = {
   BitcoinUnits.satoshis: 'SAT',
   BitcoinUnits.duro: 'DUR',
+  BitcoinUnits.bsv: 'BSV',
 };

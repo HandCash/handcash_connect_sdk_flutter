@@ -5,4 +5,6 @@ enum BitcoinUnits {
   satoshis,
   @JsonValue("DUR")
   duro,
+  @JsonValue("BSV")
+  bsv,
 }

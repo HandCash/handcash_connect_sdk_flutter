@@ -11,6 +11,7 @@ class UserPublicProfile {
   final String displayName;
   final String avatarUrl;
   final String localCurrencyCode;
+  @JsonKey(unknownEnumValue: BitcoinUnits.bsv)
   final BitcoinUnits bitcoinUnit;
 
   UserPublicProfile({
@@ -23,8 +24,7 @@ class UserPublicProfile {
     required this.bitcoinUnit,
   });
 
-  factory UserPublicProfile.fromJson(Map<String, dynamic> json) =>
-      _$UserPublicProfileFromJson(json);
+  factory UserPublicProfile.fromJson(Map<String, dynamic> json) => _$UserPublicProfileFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserPublicProfileToJson(this);
 }
