@@ -1,6 +1,6 @@
 name: handcash_connect_sdk
 description: A Flutter plugin to integrate nanopayments into Apps and Games with HandCash.
-version: 0.1.4
+version: 0.1.3-dev
 homepage: https://github.com/HandCash/handcash_connect_sdk_flutter
 
 environment:

@@ -1,17 +1,13 @@
-## [0.1.4]
-
-* Add missing `BitcoinUnit` to the enum type
-
-## [0.1.3-dev]
+## [0.1.3-dev] Null safety.
 
 * Null safety 
 * Refactor Get request to use Query Parameters
 
-## [0.1.2-dev]
+## [0.1.2-dev] Update dependencies.
 
 * Latest versions of dependencies.
 
-## [0.1.1-dev]
+## [0.1.1-dev] Update docs.
 
 * Add description.
 
