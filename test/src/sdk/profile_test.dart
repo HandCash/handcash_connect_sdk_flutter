@@ -12,8 +12,7 @@ void main() {
     final userProfile = await cloudAccount.profile.getCurrentProfile();
 
     expect(userProfile, isA<UserProfile>());
-    expect(BitcoinUnits.values.contains(userProfile.publicProfile.bitcoinUnit),
-        true);
+    expect(BitcoinUnits.values.contains(userProfile.publicProfile.bitcoinUnit), true);
   });
 
   test('should get user friends list', () async {
@@ -24,16 +23,14 @@ void main() {
   });
 
   test('should get public user profiles by handle', () async {
-    final publicProfiles =
-        await (cloudAccount.profile.getPublicProfilesByHandle(['tester']));
+    final publicProfiles = await (cloudAccount.profile.getPublicProfilesByHandle(['tester']));
 
     expect(publicProfiles, isA<List<UserPublicProfile>>());
     expect(publicProfiles.length > 0, true);
   });
 
   test('should get public user profiles by handle with two handles', () async {
-    final publicProfiles = await (cloudAccount.profile
-        .getPublicProfilesByHandle(['tester', 'rjseibane']));
+    final publicProfiles = await (cloudAccount.profile.getPublicProfilesByHandle(['tester', 'rjseibane']));
 
     expect(publicProfiles, isA<List<UserPublicProfile>>());
     expect(publicProfiles.length > 1, true);
@@ -42,15 +39,12 @@ void main() {
   test('should get current user permissions', () async {
     final userPermissions = await (cloudAccount.profile.getPermissions());
 
-    expect(
-        userPermissions
-            .any((permission) => Permissions.values.contains(permission)),
-        true);
+    expect(userPermissions.any((permission) => Permissions.values.contains(permission)), true);
   });
 
   group('Control errors', () {
-    final accountErrorToken = HandCashConnect.getAccountFromAuthToken(
-        '7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0');
+    final accountErrorToken =
+        HandCashConnect.getAccountFromAuthToken('7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0');
 
     test('return <CloudApiException.unathenticated if token is not valid', () {
       try {

@@ -18,8 +18,7 @@ UserPublicProfile _$UserPublicProfileFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$UserPublicProfileToJson(UserPublicProfile instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserPublicProfileToJson(UserPublicProfile instance) => <String, dynamic>{
       'id': instance.id,
       'handle': instance.handle,
       'paymail': instance.paymail,
@@ -57,5 +56,6 @@ K _$enumDecode<K, V>(
 
 const _$BitcoinUnitsEnumMap = {
   BitcoinUnits.satoshis: 'SAT',
+  BitcoinUnits.bsv: 'BSV',
   BitcoinUnits.duro: 'DUR',
 };
