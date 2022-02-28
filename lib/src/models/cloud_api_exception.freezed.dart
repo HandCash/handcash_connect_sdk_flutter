@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'cloud_api_exception.dart';
@@ -277,13 +278,13 @@ class _$InvalidRequestError implements InvalidRequestError {
   const _$InvalidRequestError(
       {this.message = '', this.statusCode = 400, this.info = const {}});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 400)
+  @JsonKey()
   @override
   final int statusCode;
-  @JsonKey(defaultValue: const {})
+  @JsonKey()
   @override
   final Map<String, dynamic> info;
 
@@ -297,14 +298,17 @@ class _$InvalidRequestError implements InvalidRequestError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is InvalidRequestError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode) &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode) &&
             const DeepCollectionEquality().equals(other.info, info));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode),
       const DeepCollectionEquality().hash(info));
 
   @JsonKey(ignore: true)
@@ -498,10 +502,10 @@ class _$UnauthenticatedErrorCopyWithImpl<$Res>
 class _$UnauthenticatedError implements UnauthenticatedError {
   const _$UnauthenticatedError({this.message = '', this.statusCode = 401});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 401)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -515,13 +519,16 @@ class _$UnauthenticatedError implements UnauthenticatedError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UnauthenticatedError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -714,10 +721,10 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
   const _$InvalidAuthenticationError(
       {this.message = '', this.statusCode = 403});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 403)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -731,13 +738,16 @@ class _$InvalidAuthenticationError implements InvalidAuthenticationError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is InvalidAuthenticationError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -929,10 +939,10 @@ class _$ConflictErrorCopyWithImpl<$Res>
 class _$ConflictError implements ConflictError {
   const _$ConflictError({this.message = '', this.statusCode = 409});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 409)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -946,13 +956,16 @@ class _$ConflictError implements ConflictError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ConflictError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -1142,10 +1155,10 @@ class _$ContentTooLargeErrorCopyWithImpl<$Res>
 class _$ContentTooLargeError implements ContentTooLargeError {
   const _$ContentTooLargeError({this.message = '', this.statusCode = 413});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 413)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -1159,13 +1172,16 @@ class _$ContentTooLargeError implements ContentTooLargeError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ContentTooLargeError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -1356,10 +1372,10 @@ class _$DeprecatedErrorCopyWithImpl<$Res>
 class _$DeprecatedError implements DeprecatedError {
   const _$DeprecatedError({this.message = '', this.statusCode = 410});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 410)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -1373,13 +1389,16 @@ class _$DeprecatedError implements DeprecatedError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DeprecatedError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -1569,10 +1588,10 @@ class _$OutdatedAppVersionErrorCopyWithImpl<$Res>
 class _$OutdatedAppVersionError implements OutdatedAppVersionError {
   const _$OutdatedAppVersionError({this.message = '', this.statusCode = 450});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 450)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -1586,13 +1605,16 @@ class _$OutdatedAppVersionError implements OutdatedAppVersionError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is OutdatedAppVersionError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -1783,10 +1805,10 @@ class _$ServerErrorCopyWithImpl<$Res>
 class _$ServerError implements ServerError {
   const _$ServerError({this.message = '', this.statusCode = 500});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 500)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -1800,13 +1822,16 @@ class _$ServerError implements ServerError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ServerError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -2000,10 +2025,10 @@ class _$ExternalServiceNotAvailableError
   const _$ExternalServiceNotAvailableError(
       {this.message = '', this.statusCode = 503});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
-  @JsonKey(defaultValue: 503)
+  @JsonKey()
   @override
   final int statusCode;
 
@@ -2017,13 +2042,16 @@ class _$ExternalServiceNotAvailableError
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ExternalServiceNotAvailableError &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality()
+                .equals(other.statusCode, statusCode));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, statusCode);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(statusCode));
 
   @JsonKey(ignore: true)
   @override
@@ -2381,7 +2409,7 @@ class _$UnknownErrorCopyWithImpl<$Res>
 class _$UnknownError implements UnknownError {
   const _$UnknownError({this.message = ''});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey()
   @override
   final String message;
 
@@ -2395,11 +2423,12 @@ class _$UnknownError implements UnknownError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UnknownError &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override

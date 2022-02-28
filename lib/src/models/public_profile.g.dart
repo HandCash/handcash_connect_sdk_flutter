@@ -6,18 +6,17 @@ part of 'public_profile.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserPublicProfile _$UserPublicProfileFromJson(Map<String, dynamic> json) {
-  return UserPublicProfile(
-    id: json['id'] as String,
-    handle: json['handle'] as String,
-    paymail: json['paymail'] as String,
-    displayName: json['displayName'] as String,
-    avatarUrl: json['avatarUrl'] as String,
-    localCurrencyCode: json['localCurrencyCode'] as String,
-    bitcoinUnit: _$enumDecode(_$BitcoinUnitsEnumMap, json['bitcoinUnit'],
-        unknownValue: BitcoinUnits.bsv),
-  );
-}
+UserPublicProfile _$UserPublicProfileFromJson(Map<String, dynamic> json) =>
+    UserPublicProfile(
+      id: json['id'] as String,
+      handle: json['handle'] as String,
+      paymail: json['paymail'] as String,
+      displayName: json['displayName'] as String,
+      avatarUrl: json['avatarUrl'] as String,
+      localCurrencyCode: json['localCurrencyCode'] as String,
+      bitcoinUnit: $enumDecode(_$BitcoinUnitsEnumMap, json['bitcoinUnit'],
+          unknownValue: BitcoinUnits.bsv),
+    );
 
 Map<String, dynamic> _$UserPublicProfileToJson(UserPublicProfile instance) =>
     <String, dynamic>{
