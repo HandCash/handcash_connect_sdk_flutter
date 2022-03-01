@@ -19,6 +19,7 @@ jobs:
           credentialJson: ${{ secrets.CREDENTIAL_JSON }}
           flutter: true
           format: true
+          skipTests: true
         
       - run: echo "Package is published ${{ steps.upload.outputs.success }}"
       - run: echo "Package local version is ${{ steps.upload.outputs.localVersion }}"
