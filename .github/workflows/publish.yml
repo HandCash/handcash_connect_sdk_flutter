@@ -17,6 +17,8 @@ jobs:
         uses: k-paxian/dart-package-publisher@master
         with:
           credentialJson: ${{ secrets.CREDENTIAL_JSON }}
+          flutter: true
+          format: true
         
       - run: echo "Package is published ${{ steps.upload.outputs.success }}"
       - run: echo "Package local version is ${{ steps.upload.outputs.localVersion }}"
