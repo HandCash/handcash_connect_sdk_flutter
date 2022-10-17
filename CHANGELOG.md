@@ -1,4 +1,4 @@
-## [0.1.4]
+## [0.2.0]
 
 * Change status to deprecated due to major changes in the security model of HandCash Connect. A new parameter in the request headers app-secret is enforced, and therefore, it makes no sense to make requests from the client-side.
 
